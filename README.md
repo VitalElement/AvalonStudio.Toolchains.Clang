@@ -1,1 +1,0 @@
-# AvalonStudio.Toolchains.Clang
