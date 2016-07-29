@@ -1,0 +1,9 @@
+{
+  "Name": "AvalonStudio.Toolchains.Clang",
+  "Description": "Clang based toolchain.",
+  "RepoUrl": "http://github.com/VitalElement/AvalonStudio.Toolchains.Clang.git",
+  "Tags": [
+    "Win32-Slow-v3.8.1"
+  ]
+}
+
