@@ -3,7 +3,8 @@
   "Description": "Clang based toolchain.",
   "RepoUrl": "http://github.com/VitalElement/AvalonStudio.Toolchains.Clang.git",
   "Tags": [
-    "Win32-Slow-v3.8.1"
+    "Win32-Slow-v3.8.1",
+    "Linux-Slow-v3.8.1"
   ]
 }
 
