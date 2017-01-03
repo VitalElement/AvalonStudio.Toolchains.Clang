@@ -16,6 +16,10 @@
 #define __need_NULL
 #include <stddef.h>
 
+#if __POSIX_VISIBLE >= 200809
+#include <sys/_locale.h>
+#endif
+
 _BEGIN_STD_C
 
 _PTR 	 _EXFUN(memchr,(const _PTR, int, size_t));
@@ -43,6 +47,15 @@ char 	*_EXFUN(strtok,(char *__restrict, const char *__restrict));
 #endif
 size_t	 _EXFUN(strxfrm,(char *__restrict, const char *__restrict, size_t));
 
+#if __POSIX_VISIBLE >= 200809
+int	 strcoll_l (const char *, const char *, locale_t);
+char	*strerror_l (int, locale_t);
+size_t	 strxfrm_l (char *__restrict, const char *__restrict, size_t, locale_t);
+#endif
+#if __GNU_VISIBLE
+int	 strcasecmp_l (const char *, const char *, locale_t);
+int	 strncasecmp_l (const char *, const char *, size_t, locale_t);
+#endif
 #if __MISC_VISIBLE || __POSIX_VISIBLE
 char 	*_EXFUN(strtok_r,(char *__restrict, const char *__restrict, char **__restrict));
 #endif

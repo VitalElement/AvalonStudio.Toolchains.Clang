@@ -31,7 +31,7 @@
 #define _GLIBCXX_CXX_CONFIG_H 1
 
 // The current version of the C++ library in compressed ISO date format.
-#define __GLIBCXX__ 20160609
+#define __GLIBCXX__ 20160919
 
 // Macros for various attributes.
 //   _GLIBCXX_PURE
@@ -1251,7 +1251,7 @@ namespace std
 /* #undef _GLIBCXX_VERSION */
 
 /* Define if the compiler supports C++11 atomics. */
-/* #undef _GLIBCXX_ATOMIC_BUILTINS */
+#define _GLIBCXX_ATOMIC_BUILTINS 1
 
 /* Define to use concept checking code from the boost libraries. */
 /* #undef _GLIBCXX_CONCEPT_CHECKS */
