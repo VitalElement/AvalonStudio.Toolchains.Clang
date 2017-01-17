@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Wchar-strings.html#Wchar-strings">Wchar
 
 <h3 class="section">6.28 <code>wcsxfrm</code>&mdash;locale-specific wide-character string transformation</h3>
 
-<p><a name="index-wcsxfrm-472"></a><strong>Synopsis</strong>
+<p><a name="index-wcsxfrm-522"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;wchar.h&gt;
      int wcsxfrm(wchar_t *__restrict <var>stra</var>,
          const wchar_t *__restrict <var>strb</var>, size_t <var>n</var>);
@@ -50,8 +50,8 @@ trailing null character.
 
    <p>If <var>n</var> is 0, <var>stra</var> may be a NULL pointer.
 
-   <p>The current implementation of <code>wcsxfrm</code> simply uses <code>wcslcpy</code>
-and does not support any language-specific transformations.
+   <p>(NOT Cygwin:) The current implementation of <code>wcsxfrm</code> simply uses
+<code>wcslcpy</code> and does not support any language-specific transformations.
 
    <pre class="sp">
 

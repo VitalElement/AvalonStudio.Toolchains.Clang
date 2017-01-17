@@ -54,11 +54,11 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Submodel-Options.html#Submodel-Options"
 
 <h4 class="subsection">3.17.5 AVR Options</h4>
 
-<p><a name="index-AVR-Options-1433"></a>
+<p><a name="index-AVR-Options-1434"></a>
 These options are defined for AVR implementations:
 
      <dl>
-<dt><code>-mmcu=</code><var>mcu</var><dd><a name="index-mmcu-1434"></a>Specify Atmel AVR instruction set architectures (ISA) or MCU type.
+<dt><code>-mmcu=</code><var>mcu</var><dd><a name="index-mmcu-1435"></a>Specify Atmel AVR instruction set architectures (ISA) or MCU type.
 
      <p>The default for this option is&nbsp;&lsquo;<samp><span class="samp">avr2</span></samp>&rsquo;.
 
@@ -124,7 +124,7 @@ These options are defined for AVR implementations:
 
      </dl>
 
-     <br><dt><code>-maccumulate-args</code><dd><a name="index-maccumulate_002dargs-1435"></a>Accumulate outgoing function arguments and acquire/release the needed
+     <br><dt><code>-maccumulate-args</code><dd><a name="index-maccumulate_002dargs-1436"></a>Accumulate outgoing function arguments and acquire/release the needed
 stack space for outgoing function arguments once in function
 prologue/epilogue.  Without this option, outgoing arguments are pushed
 before calling a function and popped afterwards.
@@ -138,26 +138,26 @@ stack after such a function call.
 several calls to functions that get their arguments on the stack like
 calls to printf-like functions.
 
-     <br><dt><code>-mbranch-cost=</code><var>cost</var><dd><a name="index-mbranch_002dcost-1436"></a>Set the branch costs for conditional branch instructions to
+     <br><dt><code>-mbranch-cost=</code><var>cost</var><dd><a name="index-mbranch_002dcost-1437"></a>Set the branch costs for conditional branch instructions to
 <var>cost</var>.  Reasonable values for <var>cost</var> are small, non-negative
 integers. The default branch cost is 0.
 
-     <br><dt><code>-mcall-prologues</code><dd><a name="index-mcall_002dprologues-1437"></a>Functions prologues/epilogues are expanded as calls to appropriate
+     <br><dt><code>-mcall-prologues</code><dd><a name="index-mcall_002dprologues-1438"></a>Functions prologues/epilogues are expanded as calls to appropriate
 subroutines.  Code size is smaller.
 
-     <br><dt><code>-mint8</code><dd><a name="index-mint8-1438"></a>Assume <code>int</code> to be 8-bit integer.  This affects the sizes of all types: a
+     <br><dt><code>-mint8</code><dd><a name="index-mint8-1439"></a>Assume <code>int</code> to be 8-bit integer.  This affects the sizes of all types: a
 <code>char</code> is 1 byte, an <code>int</code> is 1 byte, a <code>long</code> is 2 bytes,
 and <code>long long</code> is 4 bytes.  Please note that this option does not
 conform to the C standards, but it results in smaller code
 size.
 
-     <br><dt><code>-mn-flash=</code><var>num</var><dd><a name="index-mn_002dflash-1439"></a>Assume that the flash memory has a size of
+     <br><dt><code>-mn-flash=</code><var>num</var><dd><a name="index-mn_002dflash-1440"></a>Assume that the flash memory has a size of
 <var>num</var> times 64&nbsp;KiB.
 
-     <br><dt><code>-mno-interrupts</code><dd><a name="index-mno_002dinterrupts-1440"></a>Generated code is not compatible with hardware interrupts. 
+     <br><dt><code>-mno-interrupts</code><dd><a name="index-mno_002dinterrupts-1441"></a>Generated code is not compatible with hardware interrupts. 
 Code size is smaller.
 
-     <br><dt><code>-mrelax</code><dd><a name="index-mrelax-1441"></a>Try to replace <code>CALL</code> resp. <code>JMP</code> instruction by the shorter
+     <br><dt><code>-mrelax</code><dd><a name="index-mrelax-1442"></a>Try to replace <code>CALL</code> resp. <code>JMP</code> instruction by the shorter
 <code>RCALL</code> resp. <code>RJMP</code> instruction if applicable. 
 Setting <samp><span class="option">-mrelax</span></samp> just adds the <samp><span class="option">--mlink-relax</span></samp> option to
 the assembler's command line and the <samp><span class="option">--relax</span></samp> option to the
@@ -171,10 +171,10 @@ differ from instructions in the assembler code.
      <p>Relaxing must be turned on if linker stubs are needed, see the
 section on <code>EIND</code> and linker stubs below.
 
-     <br><dt><code>-mrmw</code><dd><a name="index-mrmw-1442"></a>Assume that the device supports the Read-Modify-Write
+     <br><dt><code>-mrmw</code><dd><a name="index-mrmw-1443"></a>Assume that the device supports the Read-Modify-Write
 instructions <code>XCH</code>, <code>LAC</code>, <code>LAS</code> and <code>LAT</code>.
 
-     <br><dt><code>-msp8</code><dd><a name="index-msp8-1443"></a>Treat the stack pointer register as an 8-bit register,
+     <br><dt><code>-msp8</code><dd><a name="index-msp8-1444"></a>Treat the stack pointer register as an 8-bit register,
 i.e. assume the high byte of the stack pointer is zero. 
 In general, you don't need to set this option by hand.
 
@@ -187,7 +187,7 @@ proper's command line, because the compiler then knows if the device
 or architecture has an 8-bit stack pointer and thus no <code>SPH</code>
 register or not.
 
-     <br><dt><code>-mstrict-X</code><dd><a name="index-mstrict_002dX-1444"></a>Use address register <code>X</code> in a way proposed by the hardware.  This means
+     <br><dt><code>-mstrict-X</code><dd><a name="index-mstrict_002dX-1445"></a>Use address register <code>X</code> in a way proposed by the hardware.  This means
 that <code>X</code> is only used in indirect, post-increment or
 pre-decrement addressing.
 
@@ -202,17 +202,17 @@ performed as
           ld   <var>Rn</var>, X        ; <var>Rn</var> = *X
           sbiw r26, const   ; X -= const
 </pre>
-     <br><dt><code>-mtiny-stack</code><dd><a name="index-mtiny_002dstack-1445"></a>Only change the lower 8&nbsp;bits of the stack pointer.
+     <br><dt><code>-mtiny-stack</code><dd><a name="index-mtiny_002dstack-1446"></a>Only change the lower 8&nbsp;bits of the stack pointer.
 
-     <br><dt><code>-nodevicelib</code><dd><a name="index-nodevicelib-1446"></a>Don't link against AVR-LibC's device specific library <code>libdev.a</code>.
+     <br><dt><code>-nodevicelib</code><dd><a name="index-nodevicelib-1447"></a>Don't link against AVR-LibC's device specific library <code>libdev.a</code>.
 
-     <br><dt><code>-Waddr-space-convert</code><dd><a name="index-Waddr_002dspace_002dconvert-1447"></a>Warn about conversions between address spaces in the case where the
+     <br><dt><code>-Waddr-space-convert</code><dd><a name="index-Waddr_002dspace_002dconvert-1448"></a>Warn about conversions between address spaces in the case where the
 resulting address space is not contained in the incoming address space. 
 </dl>
 
 <h5 class="subsubsection">3.17.5.1 <code>EIND</code> and Devices with More Than 128 Ki Bytes of Flash</h5>
 
-<p><a name="index-g_t_0040code_007bEIND_007d-1448"></a>Pointers in the implementation are 16&nbsp;bits wide. 
+<p><a name="index-g_t_0040code_007bEIND_007d-1449"></a>Pointers in the implementation are 16&nbsp;bits wide. 
 The address of a function or label is represented as word address so
 that indirect jumps and calls can target any code address in the
 range of 64&nbsp;Ki words.
@@ -327,7 +327,7 @@ Alternatively, <code>func_4</code> can be defined in the linker script.
 
 <h5 class="subsubsection">3.17.5.2 Handling of the <code>RAMPD</code>, <code>RAMPX</code>, <code>RAMPY</code> and <code>RAMPZ</code> Special Function Registers</h5>
 
-<p><a name="index-g_t_0040code_007bRAMPD_007d-1449"></a><a name="index-g_t_0040code_007bRAMPX_007d-1450"></a><a name="index-g_t_0040code_007bRAMPY_007d-1451"></a><a name="index-g_t_0040code_007bRAMPZ_007d-1452"></a>Some AVR devices support memories larger than the 64&nbsp;KiB range
+<p><a name="index-g_t_0040code_007bRAMPD_007d-1450"></a><a name="index-g_t_0040code_007bRAMPX_007d-1451"></a><a name="index-g_t_0040code_007bRAMPY_007d-1452"></a><a name="index-g_t_0040code_007bRAMPZ_007d-1453"></a>Some AVR devices support memories larger than the 64&nbsp;KiB range
 that can be accessed with 16-bit pointers.  To access memory locations
 outside this 64&nbsp;KiB range, the contentent of a <code>RAMP</code>
 register is used as high part of the address:

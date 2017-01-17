@@ -32,28 +32,37 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Ctype.html#Ctype">Ctype</a>
 <hr>
 </div>
 
-<h3 class="section">3.17 <code>iswalpha</code>&mdash;alphabetic wide character test</h3>
+<h3 class="section">3.17 <code>iswalpha</code>, <code>iswalpha_l</code>&mdash;alphabetic wide character test</h3>
 
-<p><a name="index-iswalpha-134"></a><strong>Synopsis</strong>
+<p><a name="index-iswalpha-166"></a><a name="index-iswalpha_005fl-167"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;wctype.h&gt;
      int iswalpha(wint_t <var>c</var>);
+     
+     #include &lt;wctype.h&gt;
+     int iswalpha_l(wint_t <var>c</var>, locale_t <var>locale</var>);
      
 </pre>
    <p><strong>Description</strong><br>
 <code>iswalpha</code> is a function which classifies wide-character values that
 are alphabetic.
 
+   <p><code>iswalpha_l</code> is like <code>iswalpha</code> but performs the check based on the
+locale specified by the locale object locale.  If <var>locale</var> is
+LC_GLOBAL_LOCALE or not a valid locale object, the behaviour is undefined.
+
    <pre class="sp">
 
 </pre>
 <strong>Returns</strong><br>
-<code>iswalpha</code> returns non-zero if <var>c</var> is an alphabetic wide character.
+<code>iswalpha</code>, <code>iswalpha_l</code> return non-zero if <var>c</var> is an alphabetic
+wide character.
 
    <pre class="sp">
 
 </pre>
 <strong>Portability</strong><br>
-<code>iswalpha</code> is C99.
+<code>iswalpha</code> is C99. 
+<code>iswalpha_l</code> is POSIX-1.2008.
 
    <p>No supporting OS subroutines are required.
 

@@ -54,15 +54,15 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Submodel-Options.html#Submodel-Options"
 
 <h4 class="subsection">3.17.31 Nios II Options</h4>
 
-<p><a name="index-Nios-II-options-2132"></a><a name="index-Altera-Nios-II-options-2133"></a>
+<p><a name="index-Nios-II-options-2133"></a><a name="index-Altera-Nios-II-options-2134"></a>
 These are the options defined for the Altera Nios II processor.
 
      <dl>
-<dt><code>-G </code><var>num</var><dd><a name="index-G-2134"></a><a name="index-smaller-data-references-2135"></a>Put global and static objects less than or equal to <var>num</var> bytes
+<dt><code>-G </code><var>num</var><dd><a name="index-G-2135"></a><a name="index-smaller-data-references-2136"></a>Put global and static objects less than or equal to <var>num</var> bytes
 into the small data or BSS sections instead of the normal data or BSS
 sections.  The default value of <var>num</var> is 8.
 
-     <br><dt><code>-mgpopt=</code><var>option</var><br><dt><code>-mgpopt</code><dt><code>-mno-gpopt</code><dd><a name="index-mgpopt-2136"></a><a name="index-mno_002dgpopt-2137"></a>Generate (do not generate) GP-relative accesses.  The following
+     <br><dt><code>-mgpopt=</code><var>option</var><br><dt><code>-mgpopt</code><dt><code>-mno-gpopt</code><dd><a name="index-mgpopt-2137"></a><a name="index-mno_002dgpopt-2138"></a>Generate (do not generate) GP-relative accesses.  The following
 <var>option</var> names are recognized:
 
           <dl>
@@ -106,24 +106,24 @@ GOT data sections.  In this case, the 16-bit offset for GP-relative
 addressing may not be large enough to allow access to the entire
 small data section.
 
-     <br><dt><code>-mel</code><dt><code>-meb</code><dd><a name="index-mel-2138"></a><a name="index-meb-2139"></a>Generate little-endian (default) or big-endian (experimental) code,
+     <br><dt><code>-mel</code><dt><code>-meb</code><dd><a name="index-mel-2139"></a><a name="index-meb-2140"></a>Generate little-endian (default) or big-endian (experimental) code,
 respectively.
 
-     <br><dt><code>-mbypass-cache</code><dt><code>-mno-bypass-cache</code><dd><a name="index-mno_002dbypass_002dcache-2140"></a><a name="index-mbypass_002dcache-2141"></a>Force all load and store instructions to always bypass cache by
+     <br><dt><code>-mbypass-cache</code><dt><code>-mno-bypass-cache</code><dd><a name="index-mno_002dbypass_002dcache-2141"></a><a name="index-mbypass_002dcache-2142"></a>Force all load and store instructions to always bypass cache by
 using I/O variants of the instructions. The default is not to
 bypass the cache.
 
-     <br><dt><code>-mno-cache-volatile</code><dt><code>-mcache-volatile</code><dd><a name="index-mcache_002dvolatile-2142"></a><a name="index-mno_002dcache_002dvolatile-2143"></a>Volatile memory access bypass the cache using the I/O variants of
+     <br><dt><code>-mno-cache-volatile</code><dt><code>-mcache-volatile</code><dd><a name="index-mcache_002dvolatile-2143"></a><a name="index-mno_002dcache_002dvolatile-2144"></a>Volatile memory access bypass the cache using the I/O variants of
 the load and store instructions. The default is not to bypass the cache.
 
-     <br><dt><code>-mno-fast-sw-div</code><dt><code>-mfast-sw-div</code><dd><a name="index-mno_002dfast_002dsw_002ddiv-2144"></a><a name="index-mfast_002dsw_002ddiv-2145"></a>Do not use table-based fast divide for small numbers. The default
+     <br><dt><code>-mno-fast-sw-div</code><dt><code>-mfast-sw-div</code><dd><a name="index-mno_002dfast_002dsw_002ddiv-2145"></a><a name="index-mfast_002dsw_002ddiv-2146"></a>Do not use table-based fast divide for small numbers. The default
 is to use the fast divide at <samp><span class="option">-O3</span></samp> and above.
 
-     <br><dt><code>-mno-hw-mul</code><dt><code>-mhw-mul</code><dt><code>-mno-hw-mulx</code><dt><code>-mhw-mulx</code><dt><code>-mno-hw-div</code><dt><code>-mhw-div</code><dd><a name="index-mno_002dhw_002dmul-2146"></a><a name="index-mhw_002dmul-2147"></a><a name="index-mno_002dhw_002dmulx-2148"></a><a name="index-mhw_002dmulx-2149"></a><a name="index-mno_002dhw_002ddiv-2150"></a><a name="index-mhw_002ddiv-2151"></a>Enable or disable emitting <code>mul</code>, <code>mulx</code> and <code>div</code> family of
+     <br><dt><code>-mno-hw-mul</code><dt><code>-mhw-mul</code><dt><code>-mno-hw-mulx</code><dt><code>-mhw-mulx</code><dt><code>-mno-hw-div</code><dt><code>-mhw-div</code><dd><a name="index-mno_002dhw_002dmul-2147"></a><a name="index-mhw_002dmul-2148"></a><a name="index-mno_002dhw_002dmulx-2149"></a><a name="index-mhw_002dmulx-2150"></a><a name="index-mno_002dhw_002ddiv-2151"></a><a name="index-mhw_002ddiv-2152"></a>Enable or disable emitting <code>mul</code>, <code>mulx</code> and <code>div</code> family of
 instructions by the compiler. The default is to emit <code>mul</code>
 and not emit <code>div</code> and <code>mulx</code>.
 
-     <br><dt><code>-mcustom-</code><var>insn</var><code>=</code><var>N</var><dt><code>-mno-custom-</code><var>insn</var><dd><a name="index-mcustom_002d_0040var_007binsn_007d-2152"></a><a name="index-mno_002dcustom_002d_0040var_007binsn_007d-2153"></a>Each <samp><span class="option">-mcustom-</span><var>insn</var><span class="option">=</span><var>N</var></samp> option enables use of a
+     <br><dt><code>-mcustom-</code><var>insn</var><code>=</code><var>N</var><dt><code>-mno-custom-</code><var>insn</var><dd><a name="index-mcustom_002d_0040var_007binsn_007d-2153"></a><a name="index-mno_002dcustom_002d_0040var_007binsn_007d-2154"></a>Each <samp><span class="option">-mcustom-</span><var>insn</var><span class="option">=</span><var>N</var></samp> option enables use of a
 custom instruction with encoding <var>N</var> when generating code that uses
 <var>insn</var>.  For example, <samp><span class="option">-mcustom-fadds=253</span></samp> generates custom
 instruction 253 for single-precision floating-point add operations instead
@@ -224,7 +224,7 @@ and <code>target("no-custom-</code><var>insn</var><code>")</code> function attri
 (see <a href="Function-Attributes.html#Function-Attributes">Function Attributes</a>)
 or pragmas (see <a href="Function-Specific-Option-Pragmas.html#Function-Specific-Option-Pragmas">Function Specific Option Pragmas</a>).
 
-     <br><dt><code>-mcustom-fpu-cfg=</code><var>name</var><dd><a name="index-mcustom_002dfpu_002dcfg-2154"></a>
+     <br><dt><code>-mcustom-fpu-cfg=</code><var>name</var><dd><a name="index-mcustom_002dfpu_002dcfg-2155"></a>
 This option enables a predefined, named set of custom instruction encodings
 (see <samp><span class="option">-mcustom-</span><var>insn</var></samp> above). 
 Currently, the following sets are defined:
@@ -272,18 +272,18 @@ or pragma (see <a href="Function-Specific-Option-Pragmas.html#Function-Specific-
 ELF (bare-metal) target:
 
      <dl>
-<dt><code>-mhal</code><dd><a name="index-mhal-2155"></a>Link with HAL BSP.  This suppresses linking with the GCC-provided C runtime
+<dt><code>-mhal</code><dd><a name="index-mhal-2156"></a>Link with HAL BSP.  This suppresses linking with the GCC-provided C runtime
 startup and termination code, and is typically used in conjunction with
 <samp><span class="option">-msys-crt0=</span></samp> to specify the location of the alternate startup code
 provided by the HAL BSP.
 
-     <br><dt><code>-msmallc</code><dd><a name="index-msmallc-2156"></a>Link with a limited version of the C library, <samp><span class="option">-lsmallc</span></samp>, rather than
+     <br><dt><code>-msmallc</code><dd><a name="index-msmallc-2157"></a>Link with a limited version of the C library, <samp><span class="option">-lsmallc</span></samp>, rather than
 Newlib.
 
-     <br><dt><code>-msys-crt0=</code><var>startfile</var><dd><a name="index-msys_002dcrt0-2157"></a><var>startfile</var> is the file name of the startfile (crt0) to use
+     <br><dt><code>-msys-crt0=</code><var>startfile</var><dd><a name="index-msys_002dcrt0-2158"></a><var>startfile</var> is the file name of the startfile (crt0) to use
 when linking.  This option is only useful in conjunction with <samp><span class="option">-mhal</span></samp>.
 
-     <br><dt><code>-msys-lib=</code><var>systemlib</var><dd><a name="index-msys_002dlib-2158"></a><var>systemlib</var> is the library name of the library that provides
+     <br><dt><code>-msys-lib=</code><var>systemlib</var><dd><a name="index-msys_002dlib-2159"></a><var>systemlib</var> is the library name of the library that provides
 low-level system calls required by the C library,
 e.g. <code>read</code> and <code>write</code>. 
 This option is typically used to link with a library provided by a HAL BSP.

@@ -195,7 +195,20 @@ this section is associated.
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Target Hook: section * <b>TARGET_ASM_FUNCTION_SECTION</b> (<var>tree decl, enum node_frequency freq, bool startup, bool exit</var>)<var><a name="index-TARGET_005fASM_005fFUNCTION_005fSECTION-4574"></a></var><br>
+&mdash; Target Hook: bool <b>TARGET_ASM_ELF_FLAGS_NUMERIC</b> (<var>unsigned int flags, unsigned int *num</var>)<var><a name="index-TARGET_005fASM_005fELF_005fFLAGS_005fNUMERIC-4574"></a></var><br>
+<blockquote><p>This hook can be used to encode ELF section flags for which no letter
+code has been defined in the assembler.  It is called by
+<code>default_asm_named_section</code> whenever the section flags need to be
+emitted in the assembler output.  If the hook returns true, then the
+numerical value for ELF section flags should be calculated from
+<var>flags</var> and saved in <var>*num</var>; the value is printed out instead of the
+normal sequence of letter codes.  If the hook is not defined, or if it
+returns false, then <var>num</var> is ignored and the traditional letter sequence
+is emitted. 
+</p></blockquote></div>
+
+<div class="defun">
+&mdash; Target Hook: section * <b>TARGET_ASM_FUNCTION_SECTION</b> (<var>tree decl, enum node_frequency freq, bool startup, bool exit</var>)<var><a name="index-TARGET_005fASM_005fFUNCTION_005fSECTION-4575"></a></var><br>
 <blockquote><p>Return preferred text (sub)section for function <var>decl</var>. 
 Main purpose of this function is to separate cold, normal and hot
 functions. <var>startup</var> is true when function is known to be used only
@@ -206,12 +219,12 @@ Return NULL if function should go to default text section.
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Target Hook: void <b>TARGET_ASM_FUNCTION_SWITCHED_TEXT_SECTIONS</b> (<var>FILE *file, tree decl, bool new_is_cold</var>)<var><a name="index-TARGET_005fASM_005fFUNCTION_005fSWITCHED_005fTEXT_005fSECTIONS-4575"></a></var><br>
+&mdash; Target Hook: void <b>TARGET_ASM_FUNCTION_SWITCHED_TEXT_SECTIONS</b> (<var>FILE *file, tree decl, bool new_is_cold</var>)<var><a name="index-TARGET_005fASM_005fFUNCTION_005fSWITCHED_005fTEXT_005fSECTIONS-4576"></a></var><br>
 <blockquote><p>Used by the target to emit any assembler directives or additional  labels needed when a function is partitioned between different  sections.  Output should be written to <var>file</var>.  The function  decl is available as <var>decl</var> and the new section is `cold' if  <var>new_is_cold</var> is <code>true</code>. 
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Common Target Hook: bool <b>TARGET_HAVE_NAMED_SECTIONS</b><var><a name="index-TARGET_005fHAVE_005fNAMED_005fSECTIONS-4576"></a></var><br>
+&mdash; Common Target Hook: bool <b>TARGET_HAVE_NAMED_SECTIONS</b><var><a name="index-TARGET_005fHAVE_005fNAMED_005fSECTIONS-4577"></a></var><br>
 <blockquote><p>This flag is true if the target supports <code>TARGET_ASM_NAMED_SECTION</code>. 
 It must not be modified by command-line option processing. 
 </p></blockquote></div>
@@ -219,14 +232,14 @@ It must not be modified by command-line option processing.
  <p><a name="TARGET_005fHAVE_005fSWITCHABLE_005fBSS_005fSECTIONS"></a>
 
 <div class="defun">
-&mdash; Target Hook: bool <b>TARGET_HAVE_SWITCHABLE_BSS_SECTIONS</b><var><a name="index-TARGET_005fHAVE_005fSWITCHABLE_005fBSS_005fSECTIONS-4577"></a></var><br>
+&mdash; Target Hook: bool <b>TARGET_HAVE_SWITCHABLE_BSS_SECTIONS</b><var><a name="index-TARGET_005fHAVE_005fSWITCHABLE_005fBSS_005fSECTIONS-4578"></a></var><br>
 <blockquote><p>This flag is true if we can create zeroed data by switching to a BSS
 section and then using <code>ASM_OUTPUT_SKIP</code> to allocate the space. 
 This is true on most ELF targets. 
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Target Hook: unsigned int <b>TARGET_SECTION_TYPE_FLAGS</b> (<var>tree decl, const char *name, int reloc</var>)<var><a name="index-TARGET_005fSECTION_005fTYPE_005fFLAGS-4578"></a></var><br>
+&mdash; Target Hook: unsigned int <b>TARGET_SECTION_TYPE_FLAGS</b> (<var>tree decl, const char *name, int reloc</var>)<var><a name="index-TARGET_005fSECTION_005fTYPE_005fFLAGS-4579"></a></var><br>
 <blockquote><p>Choose a set of section attributes for use by <code>TARGET_ASM_NAMED_SECTION</code>
 based on a variable or function decl, a section name, and whether or not the
 declaration's initializer may contain runtime relocations.  <var>decl</var> may be
@@ -239,7 +252,7 @@ set via <code>__attribute__</code>.
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Target Hook: int <b>TARGET_ASM_RECORD_GCC_SWITCHES</b> (<var>print_switch_type type, const char *text</var>)<var><a name="index-TARGET_005fASM_005fRECORD_005fGCC_005fSWITCHES-4579"></a></var><br>
+&mdash; Target Hook: int <b>TARGET_ASM_RECORD_GCC_SWITCHES</b> (<var>print_switch_type type, const char *text</var>)<var><a name="index-TARGET_005fASM_005fRECORD_005fGCC_005fSWITCHES-4580"></a></var><br>
 <blockquote><p>Provides the target with the ability to record the gcc command line
 switches that have been passed to the compiler, and options that are
 enabled.  The <var>type</var> argument specifies what is being recorded. 
@@ -281,7 +294,7 @@ hook.
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Target Hook: const char * <b>TARGET_ASM_RECORD_GCC_SWITCHES_SECTION</b><var><a name="index-TARGET_005fASM_005fRECORD_005fGCC_005fSWITCHES_005fSECTION-4580"></a></var><br>
+&mdash; Target Hook: const char * <b>TARGET_ASM_RECORD_GCC_SWITCHES_SECTION</b><var><a name="index-TARGET_005fASM_005fRECORD_005fGCC_005fSWITCHES_005fSECTION-4581"></a></var><br>
 <blockquote><p>This is the name of the section that will be created by the example
 ELF implementation of the <code>TARGET_ASM_RECORD_GCC_SWITCHES</code> target
 hook. 

@@ -55,51 +55,51 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Submodel-Options.html#Submodel-Options"
 
 <h4 class="subsection">3.17.33 PDP-11 Options</h4>
 
-<p><a name="index-PDP_002d11-Options-2164"></a>
+<p><a name="index-PDP_002d11-Options-2165"></a>
 These options are defined for the PDP-11:
 
      <dl>
-<dt><code>-mfpu</code><dd><a name="index-mfpu-2165"></a>Use hardware FPP floating point.  This is the default.  (FIS floating
+<dt><code>-mfpu</code><dd><a name="index-mfpu-2166"></a>Use hardware FPP floating point.  This is the default.  (FIS floating
 point on the PDP-11/40 is not supported.)
 
-     <br><dt><code>-msoft-float</code><dd><a name="index-msoft_002dfloat-2166"></a>Do not use hardware floating point.
+     <br><dt><code>-msoft-float</code><dd><a name="index-msoft_002dfloat-2167"></a>Do not use hardware floating point.
 
-     <br><dt><code>-mac0</code><dd><a name="index-mac0-2167"></a>Return floating-point results in ac0 (fr0 in Unix assembler syntax).
+     <br><dt><code>-mac0</code><dd><a name="index-mac0-2168"></a>Return floating-point results in ac0 (fr0 in Unix assembler syntax).
 
-     <br><dt><code>-mno-ac0</code><dd><a name="index-mno_002dac0-2168"></a>Return floating-point results in memory.  This is the default.
+     <br><dt><code>-mno-ac0</code><dd><a name="index-mno_002dac0-2169"></a>Return floating-point results in memory.  This is the default.
 
-     <br><dt><code>-m40</code><dd><a name="index-m40-2169"></a>Generate code for a PDP-11/40.
+     <br><dt><code>-m40</code><dd><a name="index-m40-2170"></a>Generate code for a PDP-11/40.
 
-     <br><dt><code>-m45</code><dd><a name="index-m45-2170"></a>Generate code for a PDP-11/45.  This is the default.
+     <br><dt><code>-m45</code><dd><a name="index-m45-2171"></a>Generate code for a PDP-11/45.  This is the default.
 
-     <br><dt><code>-m10</code><dd><a name="index-m10-2171"></a>Generate code for a PDP-11/10.
+     <br><dt><code>-m10</code><dd><a name="index-m10-2172"></a>Generate code for a PDP-11/10.
 
-     <br><dt><code>-mbcopy-builtin</code><dd><a name="index-mbcopy_002dbuiltin-2172"></a>Use inline <code>movmemhi</code> patterns for copying memory.  This is the
+     <br><dt><code>-mbcopy-builtin</code><dd><a name="index-mbcopy_002dbuiltin-2173"></a>Use inline <code>movmemhi</code> patterns for copying memory.  This is the
 default.
 
-     <br><dt><code>-mbcopy</code><dd><a name="index-mbcopy-2173"></a>Do not use inline <code>movmemhi</code> patterns for copying memory.
+     <br><dt><code>-mbcopy</code><dd><a name="index-mbcopy-2174"></a>Do not use inline <code>movmemhi</code> patterns for copying memory.
 
-     <br><dt><code>-mint16</code><dt><code>-mno-int32</code><dd><a name="index-mint16-2174"></a><a name="index-mno_002dint32-2175"></a>Use 16-bit <code>int</code>.  This is the default.
+     <br><dt><code>-mint16</code><dt><code>-mno-int32</code><dd><a name="index-mint16-2175"></a><a name="index-mno_002dint32-2176"></a>Use 16-bit <code>int</code>.  This is the default.
 
-     <br><dt><code>-mint32</code><dt><code>-mno-int16</code><dd><a name="index-mint32-2176"></a><a name="index-mno_002dint16-2177"></a>Use 32-bit <code>int</code>.
+     <br><dt><code>-mint32</code><dt><code>-mno-int16</code><dd><a name="index-mint32-2177"></a><a name="index-mno_002dint16-2178"></a>Use 32-bit <code>int</code>.
 
-     <br><dt><code>-mfloat64</code><dt><code>-mno-float32</code><dd><a name="index-mfloat64-2178"></a><a name="index-mno_002dfloat32-2179"></a>Use 64-bit <code>float</code>.  This is the default.
+     <br><dt><code>-mfloat64</code><dt><code>-mno-float32</code><dd><a name="index-mfloat64-2179"></a><a name="index-mno_002dfloat32-2180"></a>Use 64-bit <code>float</code>.  This is the default.
 
-     <br><dt><code>-mfloat32</code><dt><code>-mno-float64</code><dd><a name="index-mfloat32-2180"></a><a name="index-mno_002dfloat64-2181"></a>Use 32-bit <code>float</code>.
+     <br><dt><code>-mfloat32</code><dt><code>-mno-float64</code><dd><a name="index-mfloat32-2181"></a><a name="index-mno_002dfloat64-2182"></a>Use 32-bit <code>float</code>.
 
-     <br><dt><code>-mabshi</code><dd><a name="index-mabshi-2182"></a>Use <code>abshi2</code> pattern.  This is the default.
+     <br><dt><code>-mabshi</code><dd><a name="index-mabshi-2183"></a>Use <code>abshi2</code> pattern.  This is the default.
 
-     <br><dt><code>-mno-abshi</code><dd><a name="index-mno_002dabshi-2183"></a>Do not use <code>abshi2</code> pattern.
+     <br><dt><code>-mno-abshi</code><dd><a name="index-mno_002dabshi-2184"></a>Do not use <code>abshi2</code> pattern.
 
-     <br><dt><code>-mbranch-expensive</code><dd><a name="index-mbranch_002dexpensive-2184"></a>Pretend that branches are expensive.  This is for experimenting with
+     <br><dt><code>-mbranch-expensive</code><dd><a name="index-mbranch_002dexpensive-2185"></a>Pretend that branches are expensive.  This is for experimenting with
 code generation only.
 
-     <br><dt><code>-mbranch-cheap</code><dd><a name="index-mbranch_002dcheap-2185"></a>Do not pretend that branches are expensive.  This is the default.
+     <br><dt><code>-mbranch-cheap</code><dd><a name="index-mbranch_002dcheap-2186"></a>Do not pretend that branches are expensive.  This is the default.
 
-     <br><dt><code>-munix-asm</code><dd><a name="index-munix_002dasm-2186"></a>Use Unix assembler syntax.  This is the default when configured for
+     <br><dt><code>-munix-asm</code><dd><a name="index-munix_002dasm-2187"></a>Use Unix assembler syntax.  This is the default when configured for
 &lsquo;<samp><span class="samp">pdp11-*-bsd</span></samp>&rsquo;.
 
-     <br><dt><code>-mdec-asm</code><dd><a name="index-mdec_002dasm-2187"></a>Use DEC assembler syntax.  This is the default when configured for any
+     <br><dt><code>-mdec-asm</code><dd><a name="index-mdec_002dasm-2188"></a>Use DEC assembler syntax.  This is the default when configured for any
 PDP-11 target other than &lsquo;<samp><span class="samp">pdp11-*-bsd</span></samp>&rsquo;. 
 </dl>
 

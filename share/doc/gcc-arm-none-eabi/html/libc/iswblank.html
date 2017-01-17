@@ -32,28 +32,36 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Ctype.html#Ctype">Ctype</a>
 <hr>
 </div>
 
-<h3 class="section">3.19 <code>iswblank</code>&mdash;blank wide character test</h3>
+<h3 class="section">3.19 <code>iswblank</code>, <code>iswblank_l</code>&mdash;blank wide character test</h3>
 
-<p><a name="index-iswblank-136"></a><strong>Synopsis</strong>
+<p><a name="index-iswblank-170"></a><a name="index-iswblank_005fl-171"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;wctype.h&gt;
      int iswblank(wint_t <var>c</var>);
+     
+     #include &lt;wctype.h&gt;
+     int iswblank_l(wint_t <var>c</var>, locale_t <var>locale</var>);
      
 </pre>
    <p><strong>Description</strong><br>
 <code>iswblank</code> is a function which classifies wide-character values that
 are categorized as blank.
 
+   <p><code>iswblank_l</code> is like <code>iswblank</code> but performs the check based on the
+locale specified by the locale object locale.  If <var>locale</var> is
+LC_GLOBAL_LOCALE or not a valid locale object, the behaviour is undefined.
+
    <pre class="sp">
 
 </pre>
 <strong>Returns</strong><br>
-<code>iswblank</code> returns non-zero if <var>c</var> is a blank wide character.
+<code>iswblank</code>, <code>iswblank_l</code> return non-zero if <var>c</var> is a blank wide character.
 
    <pre class="sp">
 
 </pre>
 <strong>Portability</strong><br>
-<code>iswblank</code> is C99.
+<code>iswblank</code> is C99. 
+<code>iswblank_l</code> is POSIX-1.2008.
 
    <p>No supporting OS subroutines are required.
 

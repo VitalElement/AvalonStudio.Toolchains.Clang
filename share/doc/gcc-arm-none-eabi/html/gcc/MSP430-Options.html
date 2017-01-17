@@ -54,15 +54,15 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Submodel-Options.html#Submodel-Options"
 
 <h4 class="subsection">3.17.29 MSP430 Options</h4>
 
-<p><a name="index-MSP430-Options-2103"></a>
+<p><a name="index-MSP430-Options-2104"></a>
 These options are defined for the MSP430:
 
      <dl>
-<dt><code>-masm-hex</code><dd><a name="index-masm_002dhex-2104"></a>Force assembly output to always use hex constants.  Normally such
+<dt><code>-masm-hex</code><dd><a name="index-masm_002dhex-2105"></a>Force assembly output to always use hex constants.  Normally such
 constants are signed decimals, but this option is available for
 testsuite and/or aesthetic purposes.
 
-     <br><dt><code>-mmcu=</code><dd><a name="index-mmcu_003d-2105"></a>Select the MCU to target.  This is used to create a C preprocessor
+     <br><dt><code>-mmcu=</code><dd><a name="index-mmcu_003d-2106"></a>Select the MCU to target.  This is used to create a C preprocessor
 symbol based upon the MCU name, converted to upper case and pre- and
 post-fixed with &lsquo;<samp><span class="samp">__</span></samp>&rsquo;.  This in turn is used by the
 <samp><span class="file">msp430.h</span></samp> header file to select an MCU-specific supplementary
@@ -82,22 +82,22 @@ cause the linker to search for a script called <samp><span class="file">xxx.ld</
 
      <p>This option is also passed on to the assembler.
 
-     <br><dt><code>-mcpu=</code><dd><a name="index-mcpu_003d-2106"></a>Specifies the ISA to use.  Accepted values are &lsquo;<samp><span class="samp">msp430</span></samp>&rsquo;,
+     <br><dt><code>-mcpu=</code><dd><a name="index-mcpu_003d-2107"></a>Specifies the ISA to use.  Accepted values are &lsquo;<samp><span class="samp">msp430</span></samp>&rsquo;,
 &lsquo;<samp><span class="samp">msp430x</span></samp>&rsquo; and &lsquo;<samp><span class="samp">msp430xv2</span></samp>&rsquo;.  This option is deprecated.  The
 <samp><span class="option">-mmcu=</span></samp> option should be used to select the ISA.
 
-     <br><dt><code>-msim</code><dd><a name="index-msim-2107"></a>Link to the simulator runtime libraries and linker script.  Overrides
+     <br><dt><code>-msim</code><dd><a name="index-msim-2108"></a>Link to the simulator runtime libraries and linker script.  Overrides
 any scripts that would be selected by the <samp><span class="option">-mmcu=</span></samp> option.
 
-     <br><dt><code>-mlarge</code><dd><a name="index-mlarge-2108"></a>Use large-model addressing (20-bit pointers, 32-bit <code>size_t</code>).
+     <br><dt><code>-mlarge</code><dd><a name="index-mlarge-2109"></a>Use large-model addressing (20-bit pointers, 32-bit <code>size_t</code>).
 
-     <br><dt><code>-msmall</code><dd><a name="index-msmall-2109"></a>Use small-model addressing (16-bit pointers, 16-bit <code>size_t</code>).
+     <br><dt><code>-msmall</code><dd><a name="index-msmall-2110"></a>Use small-model addressing (16-bit pointers, 16-bit <code>size_t</code>).
 
-     <br><dt><code>-mrelax</code><dd><a name="index-mrelax-2110"></a>This option is passed to the assembler and linker, and allows the
+     <br><dt><code>-mrelax</code><dd><a name="index-mrelax-2111"></a>This option is passed to the assembler and linker, and allows the
 linker to perform certain optimizations that cannot be done until
 the final link.
 
-     <br><dt><code>mhwmult=</code><dd><a name="index-mhwmult_003d-2111"></a>Describes the type of hardware multiply supported by the target. 
+     <br><dt><code>mhwmult=</code><dd><a name="index-mhwmult_003d-2112"></a>Describes the type of hardware multiply supported by the target. 
 Accepted values are &lsquo;<samp><span class="samp">none</span></samp>&rsquo; for no hardware multiply, &lsquo;<samp><span class="samp">16bit</span></samp>&rsquo;
 for the original 16-bit-only multiply supported by early MCUs. 
 &lsquo;<samp><span class="samp">32bit</span></samp>&rsquo; for the 16/32-bit multiply supported by later MCUs and
@@ -117,7 +117,7 @@ inline.  This makes for bigger, but faster code.
 restore the previous interrupt state when they finish.  This makes
 them safe to use inside interrupt handlers as well as in normal code.
 
-     <br><dt><code>-minrt</code><dd><a name="index-minrt-2112"></a>Enable the use of a minimum runtime environment - no static
+     <br><dt><code>-minrt</code><dd><a name="index-minrt-2113"></a>Enable the use of a minimum runtime environment - no static
 initializers or constructors.  This is intended for memory-constrained
 devices.  The compiler includes special symbols in some objects
 that tell the linker and runtime which code fragments are required.

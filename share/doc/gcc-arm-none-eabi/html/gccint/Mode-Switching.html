@@ -54,10 +54,10 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Target-Macros.html#Target-Macros">Targe
 
 <h3 class="section">17.23 Mode Switching Instructions</h3>
 
-<p><a name="index-mode-switching-4818"></a>The following macros control mode switching optimizations:
+<p><a name="index-mode-switching-4819"></a>The following macros control mode switching optimizations:
 
 <div class="defun">
-&mdash; Macro: <b>OPTIMIZE_MODE_SWITCHING</b> (<var>entity</var>)<var><a name="index-OPTIMIZE_005fMODE_005fSWITCHING-4819"></a></var><br>
+&mdash; Macro: <b>OPTIMIZE_MODE_SWITCHING</b> (<var>entity</var>)<var><a name="index-OPTIMIZE_005fMODE_005fSWITCHING-4820"></a></var><br>
 <blockquote><p>Define this macro if the port needs extra instructions inserted for mode
 switching in an optimizing compilation.
 
@@ -80,7 +80,7 @@ are optional.
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Macro: <b>NUM_MODES_FOR_MODE_SWITCHING</b><var><a name="index-NUM_005fMODES_005fFOR_005fMODE_005fSWITCHING-4820"></a></var><br>
+&mdash; Macro: <b>NUM_MODES_FOR_MODE_SWITCHING</b><var><a name="index-NUM_005fMODES_005fFOR_005fMODE_005fSWITCHING-4821"></a></var><br>
 <blockquote><p>If you define <code>OPTIMIZE_MODE_SWITCHING</code>, you have to define this as
 initializer for an array of integers.  Each initializer element
 N refers to an entity that needs mode switching, and specifies the number
@@ -94,32 +94,32 @@ switch is needed / supplied.
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Target Hook: void <b>TARGET_MODE_EMIT</b> (<var>int entity, int mode, int prev_mode, HARD_REG_SET regs_live</var>)<var><a name="index-TARGET_005fMODE_005fEMIT-4821"></a></var><br>
+&mdash; Target Hook: void <b>TARGET_MODE_EMIT</b> (<var>int entity, int mode, int prev_mode, HARD_REG_SET regs_live</var>)<var><a name="index-TARGET_005fMODE_005fEMIT-4822"></a></var><br>
 <blockquote><p>Generate one or more insns to set <var>entity</var> to <var>mode</var>. <var>hard_reg_live</var> is the set of hard registers live at the point where the insn(s) are to be inserted. <var>prev_moxde</var> indicates the mode to switch from. Sets of a lower numbered entity will be emitted before sets of a higher numbered entity to a mode of the same or lower priority. 
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Target Hook: int <b>TARGET_MODE_NEEDED</b> (<var>int entity, rtx_insn *insn</var>)<var><a name="index-TARGET_005fMODE_005fNEEDED-4822"></a></var><br>
+&mdash; Target Hook: int <b>TARGET_MODE_NEEDED</b> (<var>int entity, rtx_insn *insn</var>)<var><a name="index-TARGET_005fMODE_005fNEEDED-4823"></a></var><br>
 <blockquote><p><var>entity</var> is an integer specifying a mode-switched entity.  If <code>OPTIMIZE_MODE_SWITCHING</code> is defined, you must define this macro to return an integer value not larger than the corresponding element in <code>NUM_MODES_FOR_MODE_SWITCHING</code>, to denote the mode that <var>entity</var> must be switched into prior to the execution of <var>insn</var>. 
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Target Hook: int <b>TARGET_MODE_AFTER</b> (<var>int entity, int mode, rtx_insn *insn</var>)<var><a name="index-TARGET_005fMODE_005fAFTER-4823"></a></var><br>
+&mdash; Target Hook: int <b>TARGET_MODE_AFTER</b> (<var>int entity, int mode, rtx_insn *insn</var>)<var><a name="index-TARGET_005fMODE_005fAFTER-4824"></a></var><br>
 <blockquote><p><var>entity</var> is an integer specifying a mode-switched entity.  If this macro is defined, it is evaluated for every <var>insn</var> during mode switching.  It determines the mode that an insn results in (if different from the incoming mode). 
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Target Hook: int <b>TARGET_MODE_ENTRY</b> (<var>int entity</var>)<var><a name="index-TARGET_005fMODE_005fENTRY-4824"></a></var><br>
+&mdash; Target Hook: int <b>TARGET_MODE_ENTRY</b> (<var>int entity</var>)<var><a name="index-TARGET_005fMODE_005fENTRY-4825"></a></var><br>
 <blockquote><p>If this macro is defined, it is evaluated for every <var>entity</var> that needs mode switching.  It should evaluate to an integer, which is a mode that <var>entity</var> is assumed to be switched to at function entry.  If <code>TARGET_MODE_ENTRY</code> is defined then <code>TARGET_MODE_EXIT</code> must be defined. 
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Target Hook: int <b>TARGET_MODE_EXIT</b> (<var>int entity</var>)<var><a name="index-TARGET_005fMODE_005fEXIT-4825"></a></var><br>
+&mdash; Target Hook: int <b>TARGET_MODE_EXIT</b> (<var>int entity</var>)<var><a name="index-TARGET_005fMODE_005fEXIT-4826"></a></var><br>
 <blockquote><p>If this macro is defined, it is evaluated for every <var>entity</var> that needs mode switching.  It should evaluate to an integer, which is a mode that <var>entity</var> is assumed to be switched to at function exit.  If <code>TARGET_MODE_EXIT</code> is defined then <code>TARGET_MODE_ENTRY</code> must be defined. 
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Target Hook: int <b>TARGET_MODE_PRIORITY</b> (<var>int entity, int n</var>)<var><a name="index-TARGET_005fMODE_005fPRIORITY-4826"></a></var><br>
+&mdash; Target Hook: int <b>TARGET_MODE_PRIORITY</b> (<var>int entity, int n</var>)<var><a name="index-TARGET_005fMODE_005fPRIORITY-4827"></a></var><br>
 <blockquote><p>This macro specifies the order in which modes for <var>entity</var> are processed. 0 is the highest priority, <code>NUM_MODES_FOR_MODE_SWITCHING[</code><var>entity</var><code>] - 1</code> the lowest.  The value of the macro should be an integer designating a mode for <var>entity</var>.  For any fixed <var>entity</var>, <code>mode_priority</code> (<var>entity</var>, <var>n</var>) shall be a bijection in 0 <small class="dots">...</small> <code>num_modes_for_mode_switching[</code><var>entity</var><code>] - 1</code>. 
 </p></blockquote></div>
 

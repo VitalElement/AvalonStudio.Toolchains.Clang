@@ -32,28 +32,36 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Ctype.html#Ctype">Ctype</a>
 <hr>
 </div>
 
-<h3 class="section">3.24 <code>iswpunct</code>&mdash;punctuation wide character test</h3>
+<h3 class="section">3.24 <code>iswpunct</code>, <code>iswpunct_l</code>&mdash;punctuation wide character test</h3>
 
-<p><a name="index-iswpunct-141"></a><strong>Synopsis</strong>
+<p><a name="index-iswpunct-180"></a><a name="index-iswpunct_005fl-181"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;wctype.h&gt;
      int iswpunct(wint_t <var>c</var>);
+     
+     #include &lt;wctype.h&gt;
+     int iswpunct_l(wint_t <var>c</var>, locale_t <var>locale</var>);
      
 </pre>
    <p><strong>Description</strong><br>
 <code>iswpunct</code> is a function which classifies wide-character values that
 are punctuation.
 
+   <p><code>iswpunct_l</code> is like <code>iswpunct</code> but performs the check based on the
+locale specified by the locale object locale.  If <var>locale</var> is
+LC_GLOBAL_LOCALE or not a valid locale object, the behaviour is undefined.
+
    <pre class="sp">
 
 </pre>
 <strong>Returns</strong><br>
-<code>iswpunct</code> returns non-zero if <var>c</var> is a punctuation wide character.
+<code>iswpunct</code>, <code>iswpunct_l</code> return non-zero if <var>c</var> is a punctuation wide character.
 
    <pre class="sp">
 
 </pre>
 <strong>Portability</strong><br>
-<code>iswpunct</code> is C99.
+<code>iswpunct</code> is C99. 
+<code>iswpunct_l</code> is POSIX-1.2008.
 
    <p>No supporting OS subroutines are required.
 

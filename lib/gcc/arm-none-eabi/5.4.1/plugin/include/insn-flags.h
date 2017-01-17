@@ -1873,7 +1873,7 @@
 #define HAVE_return_addr_mask (TARGET_ARM)
 #define HAVE_untyped_call 1
 #define HAVE_untyped_return 1
-#define HAVE_casesi (TARGET_32BIT || optimize_size || flag_pic)
+#define HAVE_casesi ((TARGET_32BIT || optimize_size || flag_pic) && !target_pure_code)
 #define HAVE_indirect_jump 1
 #define HAVE_prologue 1
 #define HAVE_epilogue 1
@@ -4227,10 +4227,10 @@ extern rtx        gen_atomic_storeqi                    (rtx, rtx, rtx);
 extern rtx        gen_atomic_storehi                    (rtx, rtx, rtx);
 extern rtx        gen_atomic_storesi                    (rtx, rtx, rtx);
 extern rtx        gen_arm_atomic_loaddi2_ldrd           (rtx, rtx);
-extern rtx        gen_atomic_compare_and_swapqi_1       (rtx, rtx, rtx, rtx, rtx, rtx, rtx);
-extern rtx        gen_atomic_compare_and_swaphi_1       (rtx, rtx, rtx, rtx, rtx, rtx, rtx);
-extern rtx        gen_atomic_compare_and_swapsi_1       (rtx, rtx, rtx, rtx, rtx, rtx, rtx);
-extern rtx        gen_atomic_compare_and_swapdi_1       (rtx, rtx, rtx, rtx, rtx, rtx, rtx);
+extern rtx        gen_atomic_compare_and_swapqi_1       (rtx, rtx, rtx, rtx, rtx, rtx, rtx, rtx);
+extern rtx        gen_atomic_compare_and_swaphi_1       (rtx, rtx, rtx, rtx, rtx, rtx, rtx, rtx);
+extern rtx        gen_atomic_compare_and_swapsi_1       (rtx, rtx, rtx, rtx, rtx, rtx, rtx, rtx);
+extern rtx        gen_atomic_compare_and_swapdi_1       (rtx, rtx, rtx, rtx, rtx, rtx, rtx, rtx);
 extern rtx        gen_atomic_exchangeqi                 (rtx, rtx, rtx, rtx);
 extern rtx        gen_atomic_exchangehi                 (rtx, rtx, rtx, rtx);
 extern rtx        gen_atomic_exchangesi                 (rtx, rtx, rtx, rtx);

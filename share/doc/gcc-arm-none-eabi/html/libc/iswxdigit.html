@@ -32,28 +32,36 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Ctype.html#Ctype">Ctype</a>
 <hr>
 </div>
 
-<h3 class="section">3.27 <code>iswxdigit</code>&mdash;hexadecimal digit wide character test</h3>
+<h3 class="section">3.27 <code>iswxdigit</code>, <code>iswxdigit_l</code>&mdash;hexadecimal digit wide character test</h3>
 
-<p><a name="index-iswxdigit-144"></a><strong>Synopsis</strong>
+<p><a name="index-iswxdigit-186"></a><a name="index-iswxdigit_005fl-187"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;wctype.h&gt;
      int iswxdigit(wint_t <var>c</var>);
+     
+     #include &lt;wctype.h&gt;
+     int iswxdigit_l(wint_t <var>c</var>, locale_t <var>locale</var>);
      
 </pre>
    <p><strong>Description</strong><br>
 <code>iswxdigit</code> is a function which classifies wide character values that
 are hexadecimal digits.
 
+   <p><code>iswxdigit_l</code> is like <code>iswxdigit</code> but performs the check based on the
+locale specified by the locale object locale.  If <var>locale</var> is
+LC_GLOBAL_LOCALE or not a valid locale object, the behaviour is undefined.
+
    <pre class="sp">
 
 </pre>
 <strong>Returns</strong><br>
-<code>iswxdigit</code> returns non-zero if <var>c</var> is a hexadecimal digit wide character.
+<code>iswxdigit</code>, <code>iswxdigit_l</code> return non-zero if <var>c</var> is a hexadecimal digit wide character.
 
    <pre class="sp">
 
 </pre>
 <strong>Portability</strong><br>
-<code>iswxdigit</code> is C99.
+<code>iswxdigit</code> is C99. 
+<code>iswxdigit_l</code> is POSIX-1.2008.
 
    <p>No supporting OS subroutines are required.
 

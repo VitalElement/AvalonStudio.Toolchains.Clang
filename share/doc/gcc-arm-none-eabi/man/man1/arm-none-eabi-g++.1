@@ -132,7 +132,7 @@
 .\" ========================================================================
 .\"
 .IX Title "GCC 1"
-.TH GCC 1 "2016-06-09" "gcc-5.4.1" "GNU"
+.TH GCC 1 "2016-09-19" "gcc-5.4.1" "GNU"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -589,8 +589,9 @@ in the following sections.
 \&\-mneon\-for\-64bits 
 \&\-mslow\-flash\-data 
 \&\-masm\-syntax\-unified 
-\&\-mrestrict\-it
-\&\-mcmse\fR
+\&\-mrestrict\-it 
+\&\-mcmse 
+\&\-mpure\-code\fR
 .Sp
 \&\fI\s-1AVR\s0 Options\fR
 \&\fB\-mmcu=\fR\fImcu\fR \fB\-maccumulate\-args \-mbranch\-cost=\fR\fIcost\fR 
@@ -12505,6 +12506,12 @@ by default.
 .IP "\fB\-mcmse\fR" 4
 .IX Item "-mcmse"
 Generate secure code as per ARMv8\-M Security Extensions.
+.IP "\fB\-mpure\-code\fR" 4
+.IX Item "-mpure-code"
+Do not allow constant data to be placed in code sections.
+Additionally, when compiling for \s-1ELF\s0 object format give all text sections the
+\&\s-1ELF\s0 processor-specific section attribute \f(CW\*(C`SHF_ARM_PURECODE\*(C'\fR.  This option
+is only available when generating non-pic code for ARMv7\-M targets.
 .PP
 \fI\s-1AVR\s0 Options\fR
 .IX Subsection "AVR Options"

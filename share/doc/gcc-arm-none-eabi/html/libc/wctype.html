@@ -32,11 +32,14 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Ctype.html#Ctype">Ctype</a>
 <hr>
 </div>
 
-<h3 class="section">3.29 <code>wctype</code>&mdash;get wide-character classification type</h3>
+<h3 class="section">3.29 <code>wctype</code>, <code>wctype_l</code>&mdash;get wide-character classification type</h3>
 
-<p><a name="index-wctype-146"></a><strong>Synopsis</strong>
+<p><a name="index-wctype-190"></a><a name="index-wctype_005fl-191"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;wctype.h&gt;
      wctype_t wctype(const char *<var>c</var>);
+     
+     #include &lt;wctype.h&gt;
+     wctype_t wctype_l(const char *<var>c</var>, locale_t <var>locale</var>);
      
 </pre>
    <p><strong>Description</strong><br>
@@ -46,11 +49,15 @@ if one exists.  The following values are guaranteed to be recognized:
 "alnum", "alpha", "blank", "cntrl", "digit", "graph", "lower", "print",
 "punct", "space", "upper", and "xdigit".
 
+   <p><code>wctype_l</code> is like <code>wctype</code> but performs the function based on the
+locale specified by the locale object locale.  If <var>locale</var> is
+LC_GLOBAL_LOCALE or not a valid locale object, the behaviour is undefined.
+
    <pre class="sp">
 
 </pre>
 <strong>Returns</strong><br>
-<code>wctype</code> returns 0 and sets <code>errno</code> to <code>EINVAL</code> if the
+<code>wctype</code>, <code>wctype_l</code> return 0 and sets <code>errno</code> to <code>EINVAL</code> if the
 given name is invalid.  Otherwise, it returns a valid non-zero wctype_t
 value.
 
@@ -58,7 +65,8 @@ value.
 
 </pre>
 <strong>Portability</strong><br>
-<code>wctype</code> is C99.
+<code>wctype</code> is C99. 
+<code>wctype_l</code> is POSIX-1.2008.
 
    <p>No supporting OS subroutines are required.
 

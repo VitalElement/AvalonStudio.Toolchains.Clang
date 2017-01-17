@@ -32,28 +32,36 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Ctype.html#Ctype">Ctype</a>
 <hr>
 </div>
 
-<h3 class="section">3.18 <code>iswcntrl</code>&mdash;control wide character test</h3>
+<h3 class="section">3.18 <code>iswcntrl</code>, <code>iswcntrl_l</code>&mdash;control wide character test</h3>
 
-<p><a name="index-iswcntrl-135"></a><strong>Synopsis</strong>
+<p><a name="index-iswcntrl-168"></a><a name="index-iswcntrl_005fl-169"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;wctype.h&gt;
      int iswcntrl(wint_t <var>c</var>);
+     
+     #include &lt;wctype.h&gt;
+     int iswcntrl_l(wint_t <var>c</var>, locale_t <var>locale</var>);
      
 </pre>
    <p><strong>Description</strong><br>
 <code>iswcntrl</code> is a function which classifies wide-character values that
 are categorized as control characters.
 
+   <p><code>iswcntrl_l</code> is like <code>iswcntrl</code> but performs the check based on the
+locale specified by the locale object locale.  If <var>locale</var> is
+LC_GLOBAL_LOCALE or not a valid locale object, the behaviour is undefined.
+
    <pre class="sp">
 
 </pre>
 <strong>Returns</strong><br>
-<code>iswcntrl</code> returns non-zero if <var>c</var> is a control wide character.
+<code>iswcntrl</code>, <code>iswcntrl_l</code> return non-zero if <var>c</var> is a control wide character.
 
    <pre class="sp">
 
 </pre>
 <strong>Portability</strong><br>
-<code>iswcntrl</code> is C99.
+<code>iswcntrl</code> is C99. 
+<code>iswcntrl_l</code> is POSIX-1.2008.
 
    <p>No supporting OS subroutines are required.
 

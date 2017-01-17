@@ -32,28 +32,36 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Ctype.html#Ctype">Ctype</a>
 <hr>
 </div>
 
-<h3 class="section">3.26 <code>iswupper</code>&mdash;uppercase wide character test</h3>
+<h3 class="section">3.26 <code>iswupper</code>, <code>iswupper_l</code>&mdash;uppercase wide character test</h3>
 
-<p><a name="index-iswupper-143"></a><strong>Synopsis</strong>
+<p><a name="index-iswupper-184"></a><a name="index-iswupper_005fl-185"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;wctype.h&gt;
      int iswupper(wint_t <var>c</var>);
+     
+     #include &lt;wctype.h&gt;
+     int iswupper_l(wint_t <var>c</var>, locale_t <var>locale</var>);
      
 </pre>
    <p><strong>Description</strong><br>
 <code>iswupper</code> is a function which classifies wide-character values that
 have uppercase translations.
 
+   <p><code>iswupper_l</code> is like <code>iswupper</code> but performs the check based on the
+locale specified by the locale object locale.  If <var>locale</var> is
+LC_GLOBAL_LOCALE or not a valid locale object, the behaviour is undefined.
+
    <pre class="sp">
 
 </pre>
 <strong>Returns</strong><br>
-<code>iswupper</code> returns non-zero if <var>c</var> is a uppercase wide character.
+<code>iswupper</code>, <code>iswupper_l</code> return non-zero if <var>c</var> is a uppercase wide character.
 
    <pre class="sp">
 
 </pre>
 <strong>Portability</strong><br>
-<code>iswupper</code> is C99.
+<code>iswupper</code> is C99. 
+<code>iswupper_l</code> is POSIX-1.2008.
 
    <p>No supporting OS subroutines are required.
 

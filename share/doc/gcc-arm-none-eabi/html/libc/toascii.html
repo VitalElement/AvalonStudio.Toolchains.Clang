@@ -32,30 +32,39 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Ctype.html#Ctype">Ctype</a>
 <hr>
 </div>
 
-<h3 class="section">3.13 <code>toascii</code>&mdash;force integers to ASCII range</h3>
+<h3 class="section">3.13 <code>toascii</code>, <code>toascii_l</code>&mdash;force integers to ASCII range</h3>
 
-<p><a name="index-toascii-128"></a><strong>Synopsis</strong>
+<p><a name="index-toascii-156"></a><a name="index-toascii_005fl-157"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;ctype.h&gt;
      int toascii(int <var>c</var>);
+     
+     #include &lt;ctype.h&gt;
+     int toascii_l(int <var>c</var>, locale_t <var>locale</var>);
      
 </pre>
    <p><strong>Description</strong><br>
 <code>toascii</code> is a macro which coerces integers to the ASCII range (0&ndash;127) by zeroing any higher-order bits.
 
+   <p><code>toascii_l</code> is like <code>toascii</code> but performs the function based on the
+locale specified by the locale object locale.  If <var>locale</var> is
+LC_GLOBAL_LOCALE or not a valid locale object, the behaviour is undefined.
+
    <p>You can use a compiled subroutine instead of the macro definition by
-undefining this macro using `<code>#undef toascii</code>'.
+undefining this macro using `<code>#undef toascii</code>' or `<code>#undef toascii_l</code>'.
 
    <pre class="sp">
 
 </pre>
 <strong>Returns</strong><br>
-<code>toascii</code> returns integers between 0 and 127.
+<code>toascii</code>, <code>toascii_l</code> return integers between 0 and 127.
 
    <pre class="sp">
 
 </pre>
 <strong>Portability</strong><br>
-<code>toascii</code> is not ANSI C.
+<code>toascii</code> is X/Open, BSD and POSIX-1.2001, but marked obsolete in
+POSIX-1.2008. 
+<code>toascii_l</code> is a GNU extension.
 
    <p>No supporting OS subroutines are required.
 

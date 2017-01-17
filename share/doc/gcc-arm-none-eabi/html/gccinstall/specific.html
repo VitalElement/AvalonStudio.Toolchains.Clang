@@ -1073,7 +1073,7 @@ supported as cross-compilation target only.
 
 <h3 class="heading"><a name="TOC56"></a>*-*-solaris2*</h3>
 
-<p>Support for Solaris 9 has been removed in GCC 4.10.  Support for Solaris
+<p>Support for Solaris 9 has been removed in GCC 5.  Support for Solaris
 8 has been removed in GCC 4.8.  Support for Solaris 7 has been removed
 in GCC 4.6.
 
@@ -1134,11 +1134,14 @@ features, so better stay with Sun <samp><span class="command">ld</span></samp>. 
 plugin (<samp><span class="option">-fuse-linker-plugin</span></samp>) with GNU <samp><span class="command">ld</span></samp>, GNU
 binutils <em>must</em> be configured with <samp><span class="option">--enable-largefile</span></samp>.
 
-   <p>To enable symbol versioning in &lsquo;<samp><span class="samp">libstdc++</span></samp>&rsquo; with Sun <samp><span class="command">ld</span></samp>,
+   <p>To enable symbol versioning in &lsquo;<samp><span class="samp">libstdc++</span></samp>&rsquo; with the Sun linker,
 you need to have any version of GNU <samp><span class="command">c++filt</span></samp>, which is part of
 GNU binutils.  &lsquo;<samp><span class="samp">libstdc++</span></samp>&rsquo; symbol versioning will be disabled if no
 appropriate version is found.  Sun <samp><span class="command">c++filt</span></samp> from the Sun Studio
 compilers does <em>not</em> work.
+
+   <p>GNU <samp><span class="command">make</span></samp> version 3.81 or later is required to build libjava
+with the Sun linker.
 
    <p>Sun bug 4296832 turns up when compiling X11 headers with GCC 2.95 or
 newer: <samp><span class="command">g++</span></samp> will complain that types are missing.  These headers

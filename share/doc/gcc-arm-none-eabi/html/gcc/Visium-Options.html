@@ -54,21 +54,21 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Submodel-Options.html#Submodel-Options"
 
 <h4 class="subsection">3.17.50 Visium Options</h4>
 
-<p><a name="index-Visium-options-2632"></a>
+<p><a name="index-Visium-options-2633"></a>
      <dl>
-<dt><code>-mdebug</code><dd><a name="index-mdebug-2633"></a>A program which performs file I/O and is destined to run on an MCM target
+<dt><code>-mdebug</code><dd><a name="index-mdebug-2634"></a>A program which performs file I/O and is destined to run on an MCM target
 should be linked with this option.  It causes the libraries libc.a and
 libdebug.a to be linked.  The program should be run on the target under
 the control of the GDB remote debugging stub.
 
-     <br><dt><code>-msim</code><dd><a name="index-msim-2634"></a>A program which performs file I/O and is destined to run on the simulator
+     <br><dt><code>-msim</code><dd><a name="index-msim-2635"></a>A program which performs file I/O and is destined to run on the simulator
 should be linked with option.  This causes libraries libc.a and libsim.a to
 be linked.
 
-     <br><dt><code>-mfpu</code><dt><code>-mhard-float</code><dd><a name="index-mfpu-2635"></a><a name="index-mhard_002dfloat-2636"></a>Generate code containing floating-point instructions.  This is the
+     <br><dt><code>-mfpu</code><dt><code>-mhard-float</code><dd><a name="index-mfpu-2636"></a><a name="index-mhard_002dfloat-2637"></a>Generate code containing floating-point instructions.  This is the
 default.
 
-     <br><dt><code>-mno-fpu</code><dt><code>-msoft-float</code><dd><a name="index-mno_002dfpu-2637"></a><a name="index-msoft_002dfloat-2638"></a>Generate code containing library calls for floating-point.
+     <br><dt><code>-mno-fpu</code><dt><code>-msoft-float</code><dd><a name="index-mno_002dfpu-2638"></a><a name="index-msoft_002dfloat-2639"></a>Generate code containing library calls for floating-point.
 
      <p><samp><span class="option">-msoft-float</span></samp> changes the calling convention in the output file;
 therefore, it is only useful if you compile <em>all</em> of a program with
@@ -76,7 +76,7 @@ this option.  In particular, you need to compile <samp><span class="file">libgcc
 library that comes with GCC, with <samp><span class="option">-msoft-float</span></samp> in order for
 this to work.
 
-     <br><dt><code>-mcpu=</code><var>cpu_type</var><dd><a name="index-mcpu-2639"></a>Set the instruction set, register set, and instruction scheduling parameters
+     <br><dt><code>-mcpu=</code><var>cpu_type</var><dd><a name="index-mcpu-2640"></a>Set the instruction set, register set, and instruction scheduling parameters
 for machine type <var>cpu_type</var>.  Supported values for <var>cpu_type</var> are
 &lsquo;<samp><span class="samp">mcm</span></samp>&rsquo;, &lsquo;<samp><span class="samp">gr5</span></samp>&rsquo; and &lsquo;<samp><span class="samp">gr6</span></samp>&rsquo;.
 
@@ -89,14 +89,14 @@ variant of the Visium architecture.
 architecture.  The only difference from GR5 code is that the compiler will
 generate block move instructions.
 
-     <br><dt><code>-mtune=</code><var>cpu_type</var><dd><a name="index-mtune-2640"></a>Set the instruction scheduling parameters for machine type <var>cpu_type</var>,
+     <br><dt><code>-mtune=</code><var>cpu_type</var><dd><a name="index-mtune-2641"></a>Set the instruction scheduling parameters for machine type <var>cpu_type</var>,
 but do not set the instruction set or register set that the option
 <samp><span class="option">-mcpu=</span><var>cpu_type</var></samp> would.
 
-     <br><dt><code>-msv-mode</code><dd><a name="index-msv_002dmode-2641"></a>Generate code for the supervisor mode, where there are no restrictions on
+     <br><dt><code>-msv-mode</code><dd><a name="index-msv_002dmode-2642"></a>Generate code for the supervisor mode, where there are no restrictions on
 the access to general registers.  This is the default.
 
-     <br><dt><code>-muser-mode</code><dd><a name="index-muser_002dmode-2642"></a>Generate code for the user mode, where the access to some general registers
+     <br><dt><code>-muser-mode</code><dd><a name="index-muser_002dmode-2643"></a>Generate code for the user mode, where the access to some general registers
 is forbidden: on the GR5, registers r24 to r31 cannot be accessed in this
 mode; on the GR6, only registers r29 to r31 are affected. 
 </dl>

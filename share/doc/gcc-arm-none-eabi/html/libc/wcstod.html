@@ -32,14 +32,25 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdlib.html#Stdlib">Stdlib</a>
 <hr>
 </div>
 
-<h3 class="section">2.43 <code>wcstod</code>, <code>wcstof</code>&mdash;wide char string to double or float</h3>
+<h3 class="section">2.43 <code>wcstod</code>, <code>wcstof</code>, <code>wcstold</code>, <code>wcstod_l</code>, <code>wcstof_l</code>, <code>wcstold_l</code>&mdash;wide char string to double or float</h3>
 
-<p><a name="index-wcstod-98"></a><a name="index-g_t_005fwcstod_005fr-99"></a><a name="index-wcstof-100"></a><a name="index-g_t_005fwcstof_005fr-101"></a><strong>Synopsis</strong>
+<p><a name="index-wcstod-105"></a><a name="index-wcstof-106"></a><a name="index-wcstold-107"></a><a name="index-wcstod_005fl-108"></a><a name="index-wcstof_005fl-109"></a><a name="index-wcstold_005fl-110"></a><a name="index-g_t_005fwcstod_005fr-111"></a><a name="index-g_t_005fwcstof_005fr-112"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdlib.h&gt;
      double wcstod(const wchar_t *__restrict <var>str</var>,
          wchar_t **__restrict <var>tail</var>);
      float wcstof(const wchar_t *__restrict <var>str</var>,
          wchar_t **__restrict <var>tail</var>);
+     long double wcstold(const wchar_t *__restrict <var>str</var>,
+         wchar_t **__restrict <var>tail</var>);
+     
+     #include &lt;stdlib.h&gt;
+     double wcstod_l(const wchar_t *__restrict <var>str</var>,
+         wchar_t **__restrict <var>tail</var>, locale_t <var>locale</var>);
+     float wcstof_l(const wchar_t *__restrict <var>str</var>,
+         wchar_t **__restrict <var>tail</var>, locale_t <var>locale</var>);
+     long double wcstold_l(const wchar_t *__restrict <var>str</var>,
+         wchar_t **__restrict <var>tail</var>,
+         locale_t <var>locale</var>);
      
      double _wcstod_r(void *<var>reent</var>,
          const wchar_t *<var>str</var>, wchar_t **<var>tail</var>);
@@ -48,11 +59,11 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdlib.html#Stdlib">Stdlib</a>
      
 </pre>
    <p><strong>Description</strong><br>
-The function <code>wcstod</code> parses the wide character string <var>str</var>,
-producing a substring which can be converted to a double
-value.  The substring converted is the longest initial
-subsequence of <var>str</var>, beginning with the first
-non-whitespace character, that has one of these formats:
+<code>wcstod</code>, <code>wcstof</code>, <code>wcstold</code> parse the wide-character string
+<var>str</var>, producing a substring which can be converted to a double,
+float, or long double value.  The substring converted is the longest
+initial subsequence of <var>str</var>, beginning with the first non-whitespace
+character, that has one of these formats:
 <pre class="smallexample">     [+|-]<var>digits</var>[.[<var>digits</var>]][(e|E)[+|-]<var>digits</var>]
      [+|-].<var>digits</var>[(e|E)[+|-]<var>digits</var>]
      [+|-](i|I)(n|N)(f|F)[(i|I)(n|N)(i|I)(t|T)(y|Y)]
@@ -70,13 +81,18 @@ the value of <var>str</var> is stored in <code>*</code><var>tail</var>.  Otherwi
 the substring is converted, and a pointer to the final string
 (which will contain at least the terminating null character of
 <var>str</var>) is stored in <code>*</code><var>tail</var>.  If you want no
-assignment to <code>*</code><var>tail</var>, pass a null pointer as <var>tail</var>. 
-<code>wcstof</code> is identical to <code>wcstod</code> except for its return type.
+assignment to <code>*</code><var>tail</var>, pass a null pointer as <var>tail</var>.
 
    <p>This implementation returns the nearest machine number to the
 input decimal string.  Ties are broken by using the IEEE
 round-even rule.  However, <code>wcstof</code> is currently subject to
 double rounding errors.
+
+   <p><code>wcstod_l</code>, <code>wcstof_l</code>, <code>wcstold_l</code> are like <code>wcstod</code>,
+<code>wcstof</code>, <code>wcstold</code> but perform the conversion based on the
+locale specified by the locale object locale.  If <var>locale</var> is
+LC_GLOBAL_LOCALE or not a valid locale object, the behaviour is
+undefined.
 
    <p>The alternate functions <code>_wcstod_r</code> and <code>_wcstof_r</code> are
 reentrant versions of <code>wcstod</code> and <code>wcstof</code>, respectively. 
@@ -92,6 +108,14 @@ correct value is out of the range of representable values,
 plus or minus <code>HUGE_VAL</code> is returned, and <code>ERANGE</code> is
 stored in errno. If the correct value would cause underflow, 0
 is returned and <code>ERANGE</code> is stored in errno.
+
+   <pre class="sp">
+
+</pre>
+<strong>Portability</strong><br>
+<code>wcstod</code> is ANSI. 
+<code>wcstof</code>, <code>wcstold</code> are C99. 
+<code>wcstod_l</code>, <code>wcstof_l</code>, <code>wcstold_l</code> are GNU extensions.
 
    <p>Supporting OS subroutines required: <code>close</code>, <code>fstat</code>, <code>isatty</code>,
 <code>lseek</code>, <code>read</code>, <code>sbrk</code>, <code>write</code>.

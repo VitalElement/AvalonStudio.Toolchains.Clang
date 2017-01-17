@@ -32,12 +32,19 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdlib.html#Stdlib">Stdlib</a>
 <hr>
 </div>
 
-<h3 class="section">2.47 <code>wcstoull</code>&mdash;wide string to unsigned long long</h3>
+<h3 class="section">2.47 <code>wcstoull</code>, <code>wcstoull_l</code>&mdash;wide string to unsigned long long</h3>
 
-<p><a name="index-wcstoull-108"></a><a name="index-g_t_005fwcstoull_005fr-109"></a><strong>Synopsis</strong>
+<p><a name="index-wcstoull-122"></a><a name="index-wcstoull_005fl-123"></a><a name="index-g_t_005fwcstoull_005fr-124"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;wchar.h&gt;
      unsigned long long wcstoull(const wchar_t *__restrict <var>s</var>,
-         wchar_t **__restrict <var>ptr</var>, int <var>base</var>);
+         wchar_t **__restrict <var>ptr</var>,
+         int <var>base</var>);
+     
+     #include &lt;wchar.h&gt;
+     unsigned long long wcstoull_l(const wchar_t *__restrict <var>s</var>,
+         wchar_t **__restrict <var>ptr</var>,
+         int <var>base</var>,
+         locale_t <var>locale</var>);
      
      unsigned long long _wcstoull_r(void *<var>reent</var>, const wchar_t *<var>s</var>,
          wchar_t **<var>ptr</var>, int <var>base</var>);
@@ -87,24 +94,29 @@ not <code>NULL</code>).
    <p>The alternate function <code>_wcstoull_r</code> is a reentrant version.  The
 extra argument <var>reent</var> is a pointer to a reentrancy structure.
 
+   <p><code>wcstoull_l</code> is like <code>wcstoull</code> but performs the conversion based on the
+locale specified by the locale object locale.  If <var>locale</var> is
+LC_GLOBAL_LOCALE or not a valid locale object, the behaviour is undefined.
+
    <pre class="sp">
 
 </pre>
 <strong>Returns</strong><br>
-<code>wcstoull</code> returns <code>0</code> and sets <code>errno</code> to <code>EINVAL</code> if the value of
-<var>base</var> is not supported.
+<code>wcstoull</code>, <code>wcstoull_l</code> return <code>0</code> and sets <code>errno</code> to <code>EINVAL</code>
+if the value of <var>base</var> is not supported.
 
-   <p><code>wcstoull</code> returns the converted value, if any. If no conversion was
-made, <code>0</code> is returned.
+   <p><code>wcstoull</code>, <code>wcstoull_l</code> return the converted value, if any. If no
+conversion was made, <code>0</code> is returned.
 
-   <p><code>wcstoull</code> returns <code>ULLONG_MAX</code> if the magnitude of the converted
-value is too large, and sets <code>errno</code> to <code>ERANGE</code>.
+   <p><code>wcstoull</code>, <code>wcstoull_l</code> return <code>ULLONG_MAX</code> if the magnitude of
+the converted value is too large, and sets <code>errno</code> to <code>ERANGE</code>.
 
    <pre class="sp">
 
 </pre>
 <strong>Portability</strong><br>
-<code>wcstoull</code> is ANSI.
+<code>wcstoull</code> is ANSI. 
+<code>wcstoull_l</code> is a GNU extension.
 
    <p><code>wcstoull</code> requires no supporting OS subroutines.
 

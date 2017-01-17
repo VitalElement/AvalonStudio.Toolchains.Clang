@@ -32,12 +32,17 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdlib.html#Stdlib">Stdlib</a>
 <hr>
 </div>
 
-<h3 class="section">2.40 <code>strtoul</code>&mdash;string to unsigned long</h3>
+<h3 class="section">2.40 <code>strtoul</code>, <code>strtoul_l</code>&mdash;string to unsigned long</h3>
 
-<p><a name="index-strtoul-90"></a><a name="index-g_t_005fstrtoul_005fr-91"></a><strong>Synopsis</strong>
+<p><a name="index-strtoul-96"></a><a name="index-strtoul_005fl-97"></a><a name="index-g_t_005fstrtoul_005fr-98"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdlib.h&gt;
-     unsigned long strtoul(const char *restrict <var>s</var>, char **restrict <var>ptr</var>,
-         int <var>base</var>);
+     unsigned long strtoul(const char *restrict <var>s</var>,
+         char **restrict <var>ptr</var>, int <var>base</var>);
+     
+     #include &lt;stdlib.h&gt;
+     unsigned long strtoul_l(const char *restrict <var>s</var>,
+         char **restrict <var>ptr</var>, int <var>base</var>,
+         locale_t <var>locale</var>);
      
      unsigned long _strtoul_r(void *<var>reent</var>, const char *restrict <var>s</var>,
          char **restrict <var>ptr</var>, int <var>base</var>);
@@ -83,6 +88,10 @@ with a substring in acceptable form), no conversion
 is performed and the value of <var>s</var> is stored in <var>ptr</var> (if <var>ptr</var> is
 not <code>NULL</code>).
 
+   <p><code>strtoul_l</code> is like <code>strtoul</code> but performs the conversion based on the
+locale specified by the locale object locale.  If <var>locale</var> is
+LC_GLOBAL_LOCALE or not a valid locale object, the behaviour is undefined.
+
    <p>The alternate function <code>_strtoul_r</code> is a reentrant version.  The
 extra argument <var>reent</var> is a pointer to a reentrancy structure.
 
@@ -90,17 +99,18 @@ extra argument <var>reent</var> is a pointer to a reentrancy structure.
 
 </pre>
 <strong>Returns</strong><br>
-<code>strtoul</code> returns the converted value, if any. If no conversion was
-made, <code>0</code> is returned.
+<code>strtoul</code>, <code>strtoul_l</code> return the converted value, if any. If no
+conversion was made, <code>0</code> is returned.
 
-   <p><code>strtoul</code> returns <code>ULONG_MAX</code> if the magnitude of the converted
-value is too large, and sets <code>errno</code> to <code>ERANGE</code>.
+   <p><code>strtoul</code>, <code>strtoul_l</code> return <code>ULONG_MAX</code> if the magnitude of the
+converted value is too large, and sets <code>errno</code> to <code>ERANGE</code>.
 
    <pre class="sp">
 
 </pre>
 <strong>Portability</strong><br>
-<code>strtoul</code> is ANSI.
+<code>strtoul</code> is ANSI. 
+<code>strtoul_l</code> is a GNU extension.
 
    <p><code>strtoul</code> requires no supporting OS subroutines.
 

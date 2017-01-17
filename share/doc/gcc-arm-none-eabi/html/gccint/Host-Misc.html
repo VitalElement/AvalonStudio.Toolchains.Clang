@@ -52,20 +52,20 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Host-Config.html#Host-Config">Host Conf
 
 <h3 class="section">18.3 Host Misc</h3>
 
-<p><a name="index-configuration-file-5042"></a><a name="index-g_t_0040file_007bxm_002d_0040var_007bmachine_007d_002eh_007d-5043"></a>
+<p><a name="index-configuration-file-5043"></a><a name="index-g_t_0040file_007bxm_002d_0040var_007bmachine_007d_002eh_007d-5044"></a>
      <dl>
-<dt><code>FATAL_EXIT_CODE</code><a name="index-FATAL_005fEXIT_005fCODE-5044"></a><dd>A C expression for the status code to be returned when the compiler
+<dt><code>FATAL_EXIT_CODE</code><a name="index-FATAL_005fEXIT_005fCODE-5045"></a><dd>A C expression for the status code to be returned when the compiler
 exits after serious errors.  The default is the system-provided macro
 &lsquo;<samp><span class="samp">EXIT_FAILURE</span></samp>&rsquo;, or &lsquo;<samp><span class="samp">1</span></samp>&rsquo; if the system doesn't define that
 macro.  Define this macro only if these defaults are incorrect.
 
-     <br><dt><code>SUCCESS_EXIT_CODE</code><a name="index-SUCCESS_005fEXIT_005fCODE-5045"></a><dd>A C expression for the status code to be returned when the compiler
+     <br><dt><code>SUCCESS_EXIT_CODE</code><a name="index-SUCCESS_005fEXIT_005fCODE-5046"></a><dd>A C expression for the status code to be returned when the compiler
 exits without serious errors.  (Warnings are not serious errors.)  The
 default is the system-provided macro &lsquo;<samp><span class="samp">EXIT_SUCCESS</span></samp>&rsquo;, or &lsquo;<samp><span class="samp">0</span></samp>&rsquo; if
 the system doesn't define that macro.  Define this macro only if these
 defaults are incorrect.
 
-     <br><dt><code>USE_C_ALLOCA</code><a name="index-USE_005fC_005fALLOCA-5046"></a><dd>Define this macro if GCC should use the C implementation of <code>alloca</code>
+     <br><dt><code>USE_C_ALLOCA</code><a name="index-USE_005fC_005fALLOCA-5047"></a><dd>Define this macro if GCC should use the C implementation of <code>alloca</code>
 provided by <samp><span class="file">libiberty.a</span></samp>.  This only affects how some parts of the
 compiler itself allocate memory.  It does not change code generation.
 
@@ -76,20 +76,20 @@ stack-based <code>alloca</code> can possibly work.  For instance, if a system
 has a small limit on the size of the stack, GCC's builtin <code>alloca</code>
 will not work reliably.
 
-     <br><dt><code>COLLECT2_HOST_INITIALIZATION</code><a name="index-COLLECT2_005fHOST_005fINITIALIZATION-5047"></a><dd>If defined, a C statement (sans semicolon) that performs host-dependent
+     <br><dt><code>COLLECT2_HOST_INITIALIZATION</code><a name="index-COLLECT2_005fHOST_005fINITIALIZATION-5048"></a><dd>If defined, a C statement (sans semicolon) that performs host-dependent
 initialization when <code>collect2</code> is being initialized.
 
-     <br><dt><code>GCC_DRIVER_HOST_INITIALIZATION</code><a name="index-GCC_005fDRIVER_005fHOST_005fINITIALIZATION-5048"></a><dd>If defined, a C statement (sans semicolon) that performs host-dependent
+     <br><dt><code>GCC_DRIVER_HOST_INITIALIZATION</code><a name="index-GCC_005fDRIVER_005fHOST_005fINITIALIZATION-5049"></a><dd>If defined, a C statement (sans semicolon) that performs host-dependent
 initialization when a compilation driver is being initialized.
 
-     <br><dt><code>HOST_LONG_LONG_FORMAT</code><a name="index-HOST_005fLONG_005fLONG_005fFORMAT-5049"></a><dd>If defined, the string used to indicate an argument of type <code>long
+     <br><dt><code>HOST_LONG_LONG_FORMAT</code><a name="index-HOST_005fLONG_005fLONG_005fFORMAT-5050"></a><dd>If defined, the string used to indicate an argument of type <code>long
 long</code> to functions like <code>printf</code>.  The default value is
 <code>"ll"</code>.
 
-     <br><dt><code>HOST_LONG_FORMAT</code><a name="index-HOST_005fLONG_005fFORMAT-5050"></a><dd>If defined, the string used to indicate an argument of type <code>long</code>
+     <br><dt><code>HOST_LONG_FORMAT</code><a name="index-HOST_005fLONG_005fFORMAT-5051"></a><dd>If defined, the string used to indicate an argument of type <code>long</code>
 to functions like <code>printf</code>.  The default value is <code>"l"</code>.
 
-     <br><dt><code>HOST_PTR_PRINTF</code><a name="index-HOST_005fPTR_005fPRINTF-5051"></a><dd>If defined, the string used to indicate an argument of type <code>void *</code>
+     <br><dt><code>HOST_PTR_PRINTF</code><a name="index-HOST_005fPTR_005fPRINTF-5052"></a><dd>If defined, the string used to indicate an argument of type <code>void *</code>
 to functions like <code>printf</code>.  The default value is <code>"%p"</code>. 
 </dl>
 

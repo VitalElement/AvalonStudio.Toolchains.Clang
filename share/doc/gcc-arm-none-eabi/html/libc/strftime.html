@@ -32,19 +32,27 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Timefns.html#Timefns">Timefns</a>
 <hr>
 </div>
 
-<h3 class="section">8.8 <code>strftime</code>&mdash;convert date and time to a formatted string</h3>
+<h3 class="section">8.8 <code>strftime</code>, <code>strftime_l</code>&mdash;convert date and time to a formatted string</h3>
 
-<p><a name="index-strftime-490"></a><strong>Synopsis</strong>
+<p><a name="index-strftime-540"></a><a name="index-strftime_005fl-541"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;time.h&gt;
      size_t strftime(char *restrict <var>s</var>, size_t <var>maxsize</var>,
          const char *restrict <var>format</var>,
          const struct tm *restrict <var>timp</var>);
+     size_t strftime_l(char *restrict <var>s</var>, size_t <var>maxsize</var>,
+         const char *restrict <var>format</var>,
+         const struct tm *restrict <var>timp</var>,
+         locale_t <var>locale</var>);
      
 </pre>
    <p><strong>Description</strong><br>
 <code>strftime</code> converts a <code>struct tm</code> representation of the time (at
 <var>timp</var>) into a null-terminated string, starting at <var>s</var> and occupying
 no more than <var>maxsize</var> characters.
+
+   <p><code>strftime_l</code> is like <code>strftime</code> but creates a string in a format
+as expected in locale <var>locale</var>.  If <var>locale</var> is LC_GLOBAL_LOCALE or
+not a valid locale object, the behaviour is undefined.
 
    <p>You control the format of the output using the string at <var>format</var>. 
 <code>*</code><var>format</var> can contain two kinds of specifications: text to be
@@ -226,14 +234,16 @@ value beforehand to distinguish between failure and an empty string.
 This implementation does not support <code>s</code> being NULL, nor overlapping
 <code>s</code> and <code>format</code>.
 
-   <p><code>strftime</code> requires no supporting OS subroutines.
+   <p><code>strftime_l</code> is POSIX-1.2008.
+
+   <p><code>strftime</code> and <code>strftime_l</code> require no supporting OS subroutines.
 
    <pre class="sp">
 
 </pre>
 <strong>Bugs</strong><br>
-<code>strftime</code> ignores the LC_TIME category of the current locale, hard-coding
-the "C" locale settings.
+(NOT Cygwin:) <code>strftime</code> ignores the LC_TIME category of the current
+locale, hard-coding the "C" locale settings.
 
    <pre class="sp">
 

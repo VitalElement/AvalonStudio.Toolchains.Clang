@@ -397,8 +397,14 @@ an option used only for regression testing of the compiler and not
 intended for ordinary use in compiling code.  This option is disabled
 by default.
 
-     <br><dt><code>-mcmse</code><dd><a name="index-mcmse-1432"></a>Generate secure code as per ARMv8-M Security Extensions. 
-</dl>
+     <br><dt><code>-mcmse</code><dd><a name="index-mcmse-1432"></a>Generate secure code as per ARMv8-M Security Extensions.
+
+     <br><dt><code>-mpure-code</code><dd><a name="index-mpure_002dcode-1433"></a>Do not allow constant data to be placed in code sections. 
+Additionally, when compiling for ELF object format give all text sections the
+ELF processor-specific section attribute <code>SHF_ARM_PURECODE</code>.  This option
+is only available when generating non-pic code for ARMv7-M targets.
+
+ </dl>
 
  </body></html>
 

@@ -65,6 +65,7 @@ ways:
 </pre>
    <p>If the optional argument is quoted, it is taken as flags to use for the
 section.  Each flag is a single character.  The following flags are recognized:
+
      <dl>
 <dt><code>b</code><dd>bss section (uninitialized data)
 <br><dt><code>n</code><dd>section is not loaded
@@ -129,6 +130,7 @@ macros just for that purpose.
 
    <p>The optional <var>flags</var> argument is a quoted string which may contain any
 combination of the following characters:
+
      <dl>
 <dt><code>a</code><dd>section is allocatable
 <br><dt><code>e</code><dd>section is excluded from executable and shared library. 
@@ -139,9 +141,22 @@ combination of the following characters:
 <br><dt><code>G</code><dd>section is a member of a section group
 <br><dt><code>T</code><dd>section is used for thread-local-storage
 <br><dt><code>?</code><dd>section is a member of the previously-current section's group, if any
+<br><dt><code>&lt;number&gt;</code><dd>a numeric value indicating the bits to be set in the ELF section header's flags
+field.  Note - if one or more of the alphabetic characters described above is
+also included in the flags field, their bit values will be ORed into the
+resulting value. 
+<br><dt><code>&lt;target specific&gt;</code><dd>some targets extend this list with their own flag characters
 </dl>
 
+   <p>Note - once a section's flags have been set they cannot be changed.  There are
+a few exceptions to this rule however.  Processor and application specific
+flags can be added to an already defined section.  The <code>.interp</code>,
+<code>.strtab</code> and <code>.symtab</code> sections can have the allocate flag
+(<code>a</code>) set after they are initially defined, and the <code>.note-GNU-stack</code>
+section may have the executable (<code>x</code>) flag added.
+
    <p>The optional <var>type</var> argument may contain one of the following constants:
+
      <dl>
 <dt><code>@progbits</code><dd>section contains data
 <br><dt><code>@nobits</code><dd>section does not contain data (i.e., section only occupies space)
@@ -149,13 +164,20 @@ combination of the following characters:
 <br><dt><code>@init_array</code><dd>section contains an array of pointers to init functions
 <br><dt><code>@fini_array</code><dd>section contains an array of pointers to finish functions
 <br><dt><code>@preinit_array</code><dd>section contains an array of pointers to pre-init functions
+<br><dt><code>@&lt;number&gt;</code><dd>a numeric value to be set as the ELF section header's type field. 
+<br><dt><code>@&lt;target specific&gt;</code><dd>some targets extend this list with their own types
 </dl>
 
-   <p>Many targets only support the first three section types.
+   <p>Many targets only support the first three section types.  The type may be
+enclosed in double quotes if necessary.
 
    <p>Note on targets where the <code>@</code> character is the start of a comment (eg
 ARM) then another character is used instead.  For example the ARM port uses the
 <code>%</code> character.
+
+   <p>Note - some sections, eg <code>.text</code> and <code>.data</code> are considered to be
+special and have fixed types.  Any attempt to declare them with a different
+type will generate an error from the assembler.
 
    <p>If <var>flags</var> contains the <code>M</code> symbol then the <var>type</var> argument must
 be specified as well as an extra argument&mdash;<var>entsize</var>&mdash;like this:
@@ -179,6 +201,7 @@ be present along with an additional field like this:
 </pre>
    <p>The <var>GroupName</var> field specifies the name of the section group to which this
 particular section belongs.  The optional linkage field can contain:
+
      <dl>
 <dt><code>comdat</code><dd>indicates that only one copy of this section should be retained
 <br><dt><code>.gnu.linkonce</code><dd>an alias for comdat
@@ -208,6 +231,7 @@ directive for compatibility with the Solaris assembler:
 </pre>
    <p>Note that the section name is quoted.  There may be a sequence of comma
 separated flags:
+
      <dl>
 <dt><code>#alloc</code><dd>section is allocatable
 <br><dt><code>#write</code><dd>section is writable

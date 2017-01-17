@@ -56,32 +56,32 @@ build the <code>gdb</code> program.
 <span class="sc">gdb</span> in a single directory, whose name is usually composed by
 appending the version number to &lsquo;<samp><span class="samp">gdb</span></samp>&rsquo;.
 
-   <p>For example, the <span class="sc">gdb</span> version 7.10.1.20160616-cvs distribution is in the
-<samp><span class="file">gdb-7.10.1.20160616-cvs</span></samp> directory.  That directory contains:
+   <p>For example, the <span class="sc">gdb</span> version 7.10.1.20160923-cvs distribution is in the
+<samp><span class="file">gdb-7.10.1.20160923-cvs</span></samp> directory.  That directory contains:
 
      <dl>
-<dt><code>gdb-7.10.1.20160616-cvs/configure </code><span class="roman">(and supporting files)</span><dd>script for configuring <span class="sc">gdb</span> and all its supporting libraries
+<dt><code>gdb-7.10.1.20160923-cvs/configure </code><span class="roman">(and supporting files)</span><dd>script for configuring <span class="sc">gdb</span> and all its supporting libraries
 
-     <br><dt><code>gdb-7.10.1.20160616-cvs/gdb</code><dd>the source specific to <span class="sc">gdb</span> itself
+     <br><dt><code>gdb-7.10.1.20160923-cvs/gdb</code><dd>the source specific to <span class="sc">gdb</span> itself
 
-     <br><dt><code>gdb-7.10.1.20160616-cvs/bfd</code><dd>source for the Binary File Descriptor library
+     <br><dt><code>gdb-7.10.1.20160923-cvs/bfd</code><dd>source for the Binary File Descriptor library
 
-     <br><dt><code>gdb-7.10.1.20160616-cvs/include</code><dd><span class="sc">gnu</span> include files
+     <br><dt><code>gdb-7.10.1.20160923-cvs/include</code><dd><span class="sc">gnu</span> include files
 
-     <br><dt><code>gdb-7.10.1.20160616-cvs/libiberty</code><dd>source for the &lsquo;<samp><span class="samp">-liberty</span></samp>&rsquo; free software library
+     <br><dt><code>gdb-7.10.1.20160923-cvs/libiberty</code><dd>source for the &lsquo;<samp><span class="samp">-liberty</span></samp>&rsquo; free software library
 
-     <br><dt><code>gdb-7.10.1.20160616-cvs/opcodes</code><dd>source for the library of opcode tables and disassemblers
+     <br><dt><code>gdb-7.10.1.20160923-cvs/opcodes</code><dd>source for the library of opcode tables and disassemblers
 
-     <br><dt><code>gdb-7.10.1.20160616-cvs/readline</code><dd>source for the <span class="sc">gnu</span> command-line interface
+     <br><dt><code>gdb-7.10.1.20160923-cvs/readline</code><dd>source for the <span class="sc">gnu</span> command-line interface
 
-     <br><dt><code>gdb-7.10.1.20160616-cvs/glob</code><dd>source for the <span class="sc">gnu</span> filename pattern-matching subroutine
+     <br><dt><code>gdb-7.10.1.20160923-cvs/glob</code><dd>source for the <span class="sc">gnu</span> filename pattern-matching subroutine
 
-     <br><dt><code>gdb-7.10.1.20160616-cvs/mmalloc</code><dd>source for the <span class="sc">gnu</span> memory-mapped malloc package
+     <br><dt><code>gdb-7.10.1.20160923-cvs/mmalloc</code><dd>source for the <span class="sc">gnu</span> memory-mapped malloc package
 </dl>
 
    <p>The simplest way to configure and build <span class="sc">gdb</span> is to run <samp><span class="file">configure</span></samp>
 from the <samp><span class="file">gdb-</span><var>version-number</var></samp> source directory, which in
-this example is the <samp><span class="file">gdb-7.10.1.20160616-cvs</span></samp> directory.
+this example is the <samp><span class="file">gdb-7.10.1.20160923-cvs</span></samp> directory.
 
    <p>First switch to the <samp><span class="file">gdb-</span><var>version-number</var></samp> source directory
 if you are not already in it; then run <samp><span class="file">configure</span></samp>.  Pass the
@@ -90,7 +90,7 @@ argument.
 
    <p>For example:
 
-<pre class="smallexample">     cd gdb-7.10.1.20160616-cvs
+<pre class="smallexample">     cd gdb-7.10.1.20160923-cvs
      ./configure <var>host</var>
      make
 </pre>
@@ -112,7 +112,7 @@ shell, you may need to run <code>sh</code> on it explicitly:
 </pre>
    <p>If you run <samp><span class="file">configure</span></samp> from a directory that contains source
 directories for multiple libraries or programs, such as the
-<samp><span class="file">gdb-7.10.1.20160616-cvs</span></samp> source directory for version 7.10.1.20160616-cvs,
+<samp><span class="file">gdb-7.10.1.20160923-cvs</span></samp> source directory for version 7.10.1.20160923-cvs,
 <samp><span class="file">configure</span></samp>
 creates configuration files for every directory level underneath (unless
 you tell it not to, with the &lsquo;<samp><span class="samp">--norecursion</span></samp>&rsquo; option).

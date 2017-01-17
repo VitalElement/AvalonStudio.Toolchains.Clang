@@ -32,12 +32,15 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Ctype.html#Ctype">Ctype</a>
 <hr>
 </div>
 
-<h3 class="section">3.15 <code>toupper</code>&mdash;translate characters to uppercase</h3>
+<h3 class="section">3.15 <code>toupper</code>, <code>toupper_l</code>&mdash;translate characters to uppercase</h3>
 
-<p><a name="index-toupper-131"></a><a name="index-g_t_005ftoupper-132"></a><strong>Synopsis</strong>
+<p><a name="index-toupper-161"></a><a name="index-toupper_005fl-162"></a><a name="index-g_t_005ftoupper-163"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;ctype.h&gt;
      int toupper(int <var>c</var>);
      int _toupper(int <var>c</var>);
+     
+     #include &lt;ctype.h&gt;
+     int toupper_l(int <var>c</var>, locale_t <var>locale</var>);
      
 </pre>
    <p><strong>Description</strong><br>
@@ -45,8 +48,12 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Ctype.html#Ctype">Ctype</a>
 leaving all other characters unchanged.  It is only defined when
 <var>c</var> is an integer in the range <code>EOF</code> to <code>255</code>.
 
+   <p><code>toupper_l</code> is like <code>toupper</code> but performs the function based on the
+locale specified by the locale object locale.  If <var>locale</var> is
+LC_GLOBAL_LOCALE or not a valid locale object, the behaviour is undefined.
+
    <p>You can use a compiled subroutine instead of the macro definition by
-undefining this macro using `<code>#undef toupper</code>'.
+undefining this macro using `<code>#undef toupper</code>' or `<code>#undef toupper_l</code>'.
 
    <p><code>_toupper</code> performs the same conversion as <code>toupper</code>, but should
 only be used when <var>c</var> is known to be a lowercase character (<code>a</code>&ndash;<code>z</code>).
@@ -55,8 +62,8 @@ only be used when <var>c</var> is known to be a lowercase character (<code>a</co
 
 </pre>
 <strong>Returns</strong><br>
-<code>toupper</code> returns the uppercase equivalent of <var>c</var> when it is a
-character between <code>a</code> and <code>z</code>, and <var>c</var> otherwise.
+<code>toupper</code>, <code>toupper_l</code> return the uppercase equivalent of <var>c</var> when
+<var>c</var> is a lowercase character, and <var>c</var> otherwise.
 
    <p><code>_toupper</code> returns the uppercase equivalent of <var>c</var> when it is a
 character between <code>a</code> and <code>z</code>.  If <var>c</var> is not one of these
@@ -66,7 +73,8 @@ characters, the behaviour of <code>_toupper</code> is undefined.
 
 </pre>
 <strong>Portability</strong><br>
-<code>toupper</code> is ANSI C.  <code>_toupper</code> is not recommended for portable programs.
+<code>toupper</code> is ANSI C.  <code>_toupper</code> is not recommended for portable programs. 
+<code>toupper_l</code> is POSIX-1.2008.
 
    <p>No supporting OS subroutines are required.
 

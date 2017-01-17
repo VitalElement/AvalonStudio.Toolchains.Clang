@@ -32,34 +32,41 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Ctype.html#Ctype">Ctype</a>
 <hr>
 </div>
 
-<h3 class="section">3.2 <code>isalpha</code>&mdash;alphabetic character predicate</h3>
+<h3 class="section">3.2 <code>isalpha</code>, <code>isalpha_l</code>&mdash;alphabetic character predicate</h3>
 
-<p><a name="index-isalpha-116"></a><strong>Synopsis</strong>
+<p><a name="index-isalpha-132"></a><a name="index-isalpha_005fl-133"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;ctype.h&gt;
      int isalpha(int <var>c</var>);
      
+     #include &lt;ctype.h&gt;
+     int isalpha_l(int <var>c</var>, locale_t <var>locale</var>);
+     
 </pre>
    <p><strong>Description</strong><br>
-<code>isalpha</code> is a macro which classifies ASCII integer values by table
+<code>isalpha</code> is a macro which classifies singlebyte charset values by table
 lookup.  It is a predicate returning non-zero when <var>c</var> represents an
 alphabetic ASCII character, and 0 otherwise.  It is defined only if
 <var>c</var> is representable as an unsigned char or if <var>c</var> is EOF.
 
+   <p><code>isalpha_l</code> is like <code>isalpha</code> but performs the check based on the
+locale specified by the locale object locale.  If <var>locale</var> is
+LC_GLOBAL_LOCALE or not a valid locale object, the behaviour is undefined.
+
    <p>You can use a compiled subroutine instead of the macro definition by
-undefining the macro using `<code>#undef isalpha</code>'.
+undefining the macro using `<code>#undef isalpha</code>' or `<code>#undef isalpha_l</code>'.
 
    <pre class="sp">
 
 </pre>
 <strong>Returns</strong><br>
-<code>isalpha</code> returns non-zero if <var>c</var> is a letter (<code>A</code>&ndash;<code>Z</code> or
-<code>a</code>&ndash;<code>z</code>).
+<code>isalpha</code>, <code>isalpha_l</code> return non-zero if <var>c</var> is a letter.
 
    <pre class="sp">
 
 </pre>
 <strong>Portability</strong><br>
-<code>isalpha</code> is ANSI C.
+<code>isalpha</code> is ANSI C. 
+<code>isalpha_l</code> is POSIX-1.2008.
 
    <p>No supporting OS subroutines are required.
 

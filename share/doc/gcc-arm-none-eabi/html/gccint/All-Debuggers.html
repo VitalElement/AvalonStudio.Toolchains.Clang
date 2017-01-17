@@ -56,7 +56,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Debugging-Info.html#Debugging-Info">Deb
 <p>These macros affect all debugging formats.
 
 <div class="defun">
-&mdash; Macro: <b>DBX_REGISTER_NUMBER</b> (<var>regno</var>)<var><a name="index-DBX_005fREGISTER_005fNUMBER-4750"></a></var><br>
+&mdash; Macro: <b>DBX_REGISTER_NUMBER</b> (<var>regno</var>)<var><a name="index-DBX_005fREGISTER_005fNUMBER-4751"></a></var><br>
 <blockquote><p>A C expression that returns the DBX register number for the compiler
 register number <var>regno</var>.  In the default macro provided, the value
 of this expression will be <var>regno</var> itself.  But sometimes there are
@@ -76,7 +76,7 @@ redefine the actual register numbering scheme.
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Macro: <b>DEBUGGER_AUTO_OFFSET</b> (<var>x</var>)<var><a name="index-DEBUGGER_005fAUTO_005fOFFSET-4751"></a></var><br>
+&mdash; Macro: <b>DEBUGGER_AUTO_OFFSET</b> (<var>x</var>)<var><a name="index-DEBUGGER_005fAUTO_005fOFFSET-4752"></a></var><br>
 <blockquote><p>A C expression that returns the integer offset value for an automatic
 variable having address <var>x</var> (an RTL expression).  The default
 computation assumes that <var>x</var> is based on the frame-pointer and
@@ -87,14 +87,14 @@ for SDB and allow the frame-pointer to be eliminated when the
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Macro: <b>DEBUGGER_ARG_OFFSET</b> (<var>offset, x</var>)<var><a name="index-DEBUGGER_005fARG_005fOFFSET-4752"></a></var><br>
+&mdash; Macro: <b>DEBUGGER_ARG_OFFSET</b> (<var>offset, x</var>)<var><a name="index-DEBUGGER_005fARG_005fOFFSET-4753"></a></var><br>
 <blockquote><p>A C expression that returns the integer offset value for an argument
 having address <var>x</var> (an RTL expression).  The nominal offset is
 <var>offset</var>. 
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Macro: <b>PREFERRED_DEBUGGING_TYPE</b><var><a name="index-PREFERRED_005fDEBUGGING_005fTYPE-4753"></a></var><br>
+&mdash; Macro: <b>PREFERRED_DEBUGGING_TYPE</b><var><a name="index-PREFERRED_005fDEBUGGING_005fTYPE-4754"></a></var><br>
 <blockquote><p>A C expression that returns the type of debugging output GCC should
 produce when the user specifies just <samp><span class="option">-g</span></samp>.  Define
 this if you have arranged for GCC to support more than one format of

@@ -181,8 +181,8 @@ This toolchain is released with two prebuilt C libraries based on newlib:
 one is the standard newlib and the other is newlib-nano for code size.
 To distinguish them, we rename the size optimized libraries as:
 
-  libc.a --> libc_s.a
-  libg.a --> libg_s.a
+  libc.a --> libc_nano.a
+  libg.a --> libg_nano.a
 
 To use newlib-nano, users should provide additional gcc compile and link time
 option:
@@ -191,8 +191,8 @@ option:
 At compile time, a 'newlib.h' header file especially configured for newlib-nano
 will be used if --specs=nano.specs is passed to the compiler.
 
-Nano.specs also handles two additional gcc libraries: libstdc++_s.a and
-libsupc++_s.a, which are optimized for code size.
+Nano.specs also handles two additional gcc libraries: libstdc++_nano.a and
+libsupc++_nano.a, which are optimized for code size.
 
 For example:
 $ arm-none-eabi-gcc src.c --specs=nano.specs $(OTHER_OPTIONS)

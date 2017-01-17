@@ -32,14 +32,21 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdlib.html#Stdlib">Stdlib</a>
 <hr>
 </div>
 
-<h3 class="section">2.39 <code>strtoll</code>&mdash;string to long long</h3>
+<h3 class="section">2.39 <code>strtoll</code>, <code>strtoll_l</code>&mdash;string to long long</h3>
 
-<p><a name="index-strtoll-88"></a><a name="index-g_t_005fstrtoll_005fr-89"></a><strong>Synopsis</strong>
+<p><a name="index-strtoll-93"></a><a name="index-strtoll_005fl-94"></a><a name="index-g_t_005fstrtoll_005fr-95"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdlib.h&gt;
-     long long strtoll(const char *restrict <var>s</var>, char **restrict <var>ptr</var>,int <var>base</var>);
+     long long strtoll(const char *restrict <var>s</var>, char **restrict <var>ptr</var>,
+         int <var>base</var>);
+     
+     #include &lt;stdlib.h&gt;
+     long long strtoll_l(const char *restrict <var>s</var>,
+         char **restrict <var>ptr</var>, int <var>base</var>,
+         locale_t <var>locale</var>);
      
      long long _strtoll_r(void *<var>reent</var>,
-         const char *restrict <var>s</var>, char **restrict <var>ptr</var>,int <var>base</var>);
+         const char *restrict <var>s</var>,
+         char **restrict <var>ptr</var>, int <var>base</var>);
      
 </pre>
    <p><strong>Description</strong><br>
@@ -82,6 +89,10 @@ character past the converted subject string is stored in <var>ptr</var>, if
 is performed and the value of <var>s</var> is stored in <var>ptr</var> (if <var>ptr</var> is
 not <code>NULL</code>).
 
+   <p><code>strtoll_l</code> is like <code>strtoll</code> but performs the conversion based on the
+locale specified by the locale object locale.  If <var>locale</var> is
+LC_GLOBAL_LOCALE or not a valid locale object, the behaviour is undefined.
+
    <p>The alternate function <code>_strtoll_r</code> is a reentrant version.  The
 extra argument <var>reent</var> is a pointer to a reentrancy structure.
 
@@ -89,17 +100,19 @@ extra argument <var>reent</var> is a pointer to a reentrancy structure.
 
 </pre>
 <strong>Returns</strong><br>
-<code>strtoll</code> returns the converted value, if any. If no conversion was
-made, 0 is returned.
+<code>strtoll</code>, <code>strtoll_l</code> return the converted value, if any. If no
+conversion was made, 0 is returned.
 
-   <p><code>strtoll</code> returns <code>LONG_LONG_MAX</code> or <code>LONG_LONG_MIN</code> if the magnitude of
-the converted value is too large, and sets <code>errno</code> to <code>ERANGE</code>.
+   <p><code>strtoll</code>, <code>strtoll_l</code> return <code>LONG_LONG_MAX</code> or <code>LONG_LONG_MIN</code>
+if the magnitude of the converted value is too large, and sets <code>errno</code>
+to <code>ERANGE</code>.
 
    <pre class="sp">
 
 </pre>
 <strong>Portability</strong><br>
-<code>strtoll</code> is ANSI.
+<code>strtoll</code> is ANSI. 
+<code>strtoll_l</code> is a GNU extension.
 
    <p>No supporting OS subroutines are required.
 

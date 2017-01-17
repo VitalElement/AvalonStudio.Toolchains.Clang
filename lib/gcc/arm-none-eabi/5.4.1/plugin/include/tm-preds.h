@@ -1,5 +1,5 @@
 /* Generated automatically by the program 'build/genpreds'
-   from the machine description file '/home/build/work/GCC-5-0-build/src/gcc/gcc/config/arm/arm.md'.  */
+   from the machine description file '/home/build/work/GCC-5-build/src/gcc/gcc/config/arm/arm.md'.  */
 
 #ifndef GCC_TM_PREDS_H
 #define GCC_TM_PREDS_H
@@ -82,6 +82,7 @@ extern int noov_comparison_operator (rtx, machine_mode);
 extern int minmax_operator (rtx, machine_mode);
 extern int cc_register (rtx, machine_mode);
 extern int dominant_cc_register (rtx, machine_mode);
+extern int cc_register_operand (rtx, machine_mode);
 extern int arm_extendqisi_mem_op (rtx, machine_mode);
 extern int arm_reg_or_extendqisi_mem_op (rtx, machine_mode);
 extern int power_of_two_operand (rtx, machine_mode);
@@ -151,6 +152,7 @@ enum constraint_num
   CONSTRAINT_Pc,
   CONSTRAINT_Pd,
   CONSTRAINT_Pe,
+  CONSTRAINT_Pf,
   CONSTRAINT_Ps,
   CONSTRAINT_Pt,
   CONSTRAINT_Pu,

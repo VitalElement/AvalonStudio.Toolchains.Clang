@@ -58,7 +58,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="C_002b_002b-Extensions.html#C_002b_002b
 <p>Some attributes only make sense for C++ programs.
 
      <dl>
-<dt><code>abi_tag ("</code><var>tag</var><code>", ...)</code><dd><a name="index-g_t_0040code_007babi_005ftag_007d-function-attribute-4226"></a><a name="index-g_t_0040code_007babi_005ftag_007d-variable-attribute-4227"></a><a name="index-g_t_0040code_007babi_005ftag_007d-type-attribute-4228"></a>The <code>abi_tag</code> attribute can be applied to a function, variable, or class
+<dt><code>abi_tag ("</code><var>tag</var><code>", ...)</code><dd><a name="index-g_t_0040code_007babi_005ftag_007d-function-attribute-4227"></a><a name="index-g_t_0040code_007babi_005ftag_007d-variable-attribute-4228"></a><a name="index-g_t_0040code_007babi_005ftag_007d-type-attribute-4229"></a>The <code>abi_tag</code> attribute can be applied to a function, variable, or class
 declaration.  It modifies the mangled name of the entity to
 incorporate the tag name, in order to distinguish the function or
 class from an earlier version with a different ABI; perhaps the class
@@ -96,7 +96,7 @@ variable or function.  <samp><span class="option">-Wabi-tag</span></samp> also w
 situation; this warning can be avoided by explicitly tagging the
 variable or function or moving it into a tagged inline namespace.
 
-     <br><dt><code>init_priority (</code><var>priority</var><code>)</code><dd><a name="index-g_t_0040code_007binit_005fpriority_007d-variable-attribute-4229"></a>
+     <br><dt><code>init_priority (</code><var>priority</var><code>)</code><dd><a name="index-g_t_0040code_007binit_005fpriority_007d-variable-attribute-4230"></a>
 In Standard C++, objects defined at namespace scope are guaranteed to be
 initialized in an order in strict accordance with that of their definitions
 <em>in a given translation unit</em>.  No guarantee is made for initializations
@@ -115,13 +115,13 @@ inclusive.  Lower numbers indicate a higher priority.
      <p class="noindent">Note that the particular values of <var>priority</var> do not matter; only their
 relative ordering.
 
-     <br><dt><code>java_interface</code><dd><a name="index-g_t_0040code_007bjava_005finterface_007d-type-attribute-4230"></a>
+     <br><dt><code>java_interface</code><dd><a name="index-g_t_0040code_007bjava_005finterface_007d-type-attribute-4231"></a>
 This type attribute informs C++ that the class is a Java interface.  It may
 only be applied to classes declared within an <code>extern "Java"</code> block. 
 Calls to methods declared in this interface are dispatched using GCJ's
 interface table mechanism, instead of regular virtual table dispatch.
 
-     <br><dt><code>warn_unused</code><dd><a name="index-g_t_0040code_007bwarn_005funused_007d-type-attribute-4231"></a>
+     <br><dt><code>warn_unused</code><dd><a name="index-g_t_0040code_007bwarn_005funused_007d-type-attribute-4232"></a>
 For C++ types with non-trivial constructors and/or destructors it is
 impossible for the compiler to determine whether a variable of this
 type is truly unused if it is not referenced. This type attribute

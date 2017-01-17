@@ -59,7 +59,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Target-Builtins.html#Target-Builtins">T
 families of processors:
 
 <div class="defun">
-&mdash; Built-in Function: void <b>__builtin_set_thread_pointer</b> (<var>void *ptr</var>)<var><a name="index-g_t_005f_005fbuiltin_005fset_005fthread_005fpointer-4139"></a></var><br>
+&mdash; Built-in Function: void <b>__builtin_set_thread_pointer</b> (<var>void *ptr</var>)<var><a name="index-g_t_005f_005fbuiltin_005fset_005fthread_005fpointer-4140"></a></var><br>
 <blockquote><p>Sets the &lsquo;<samp><span class="samp">GBR</span></samp>&rsquo; register to the specified value <var>ptr</var>.  This is usually
 used by system code that manages threads and execution contexts.  The compiler
 normally does not generate code that modifies the contents of &lsquo;<samp><span class="samp">GBR</span></samp>&rsquo; and
@@ -70,7 +70,7 @@ value in user code must be done with caution, since the compiler might use
       </blockquote></div>
 
 <div class="defun">
-&mdash; Built-in Function: void * <b>__builtin_thread_pointer</b> (<var>void</var>)<var><a name="index-g_t_005f_005fbuiltin_005fthread_005fpointer-4140"></a></var><br>
+&mdash; Built-in Function: void * <b>__builtin_thread_pointer</b> (<var>void</var>)<var><a name="index-g_t_005f_005fbuiltin_005fthread_005fpointer-4141"></a></var><br>
 <blockquote><p>Returns the value that is currently set in the &lsquo;<samp><span class="samp">GBR</span></samp>&rsquo; register. 
 Memory loads and stores that use the thread pointer as a base address are
 turned into &lsquo;<samp><span class="samp">GBR</span></samp>&rsquo; based displacement loads and stores, if possible. 
@@ -90,12 +90,12 @@ For example:
       </blockquote></div>
 
 <div class="defun">
-&mdash; Built-in Function: unsigned int <b>__builtin_sh_get_fpscr</b> (<var>void</var>)<var><a name="index-g_t_005f_005fbuiltin_005fsh_005fget_005ffpscr-4141"></a></var><br>
+&mdash; Built-in Function: unsigned int <b>__builtin_sh_get_fpscr</b> (<var>void</var>)<var><a name="index-g_t_005f_005fbuiltin_005fsh_005fget_005ffpscr-4142"></a></var><br>
 <blockquote><p>Returns the value that is currently set in the &lsquo;<samp><span class="samp">FPSCR</span></samp>&rsquo; register. 
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Built-in Function: void <b>__builtin_sh_set_fpscr</b> (<var>unsigned int val</var>)<var><a name="index-g_t_005f_005fbuiltin_005fsh_005fset_005ffpscr-4142"></a></var><br>
+&mdash; Built-in Function: void <b>__builtin_sh_set_fpscr</b> (<var>unsigned int val</var>)<var><a name="index-g_t_005f_005fbuiltin_005fsh_005fset_005ffpscr-4143"></a></var><br>
 <blockquote><p>Sets the &lsquo;<samp><span class="samp">FPSCR</span></samp>&rsquo; register to the specified value <var>val</var>, while
 preserving the current values of the FR, SZ and PR bits. 
 </p></blockquote></div>

@@ -54,7 +54,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Using-Assembly-Language-with-C.html#Usi
 
 <h4 class="subsection">6.43.2 Extended Asm - Assembler Instructions with C Expression Operands</h4>
 
-<p><a name="index-extended-_0040code_007basm_007d-3420"></a><a name="index-assembly-language-in-C_002c-extended-3421"></a>
+<p><a name="index-extended-_0040code_007basm_007d-3421"></a><a name="index-assembly-language-in-C_002c-extended-3422"></a>
 With extended <code>asm</code> you can read and write C variables from
 assembler and perform jumps from assembler code to C labels. 
 Extended <code>asm</code> syntax uses colons (&lsquo;<samp><span class="samp">:</span></samp>&rsquo;) to delimit
@@ -152,7 +152,7 @@ example for i386 using <code>asm</code> might look like this:
 
 <h5 class="subsubsection">6.43.2.1 Volatile</h5>
 
-<p><a name="index-volatile-_0040code_007basm_007d-3422"></a><a name="index-g_t_0040code_007basm_007d-volatile-3423"></a>
+<p><a name="index-volatile-_0040code_007basm_007d-3423"></a><a name="index-g_t_0040code_007basm_007d-volatile-3424"></a>
 GCC's optimizers sometimes discard <code>asm</code> statements if they determine
 there is no need for the output variables. Also, the optimizers may move
 code out of loops if they believe that the code will always return the same
@@ -264,7 +264,7 @@ Using &lsquo;<samp><span class="samp">%=</span></samp>&rsquo;
 
 <h5 class="subsubsection">6.43.2.2 Assembler Template</h5>
 
-<p><a name="index-g_t_0040code_007basm_007d-assembler-template-3424"></a>
+<p><a name="index-g_t_0040code_007basm_007d-assembler-template-3425"></a>
 An assembler template is a literal string containing assembler instructions. 
 The compiler replaces tokens in the template that refer
 to inputs, outputs, and goto labels,
@@ -365,7 +365,7 @@ assembler template such as this:
 
 <h5 class="subsubsection">6.43.2.3 Output Operands</h5>
 
-<p><a name="index-g_t_0040code_007basm_007d-output-operands-3425"></a>
+<p><a name="index-g_t_0040code_007basm_007d-output-operands-3426"></a>
 An <code>asm</code> statement has zero or more output operands indicating the names
 of C variables modified by the assembler code.
 
@@ -529,7 +529,7 @@ for <code>d</code> by specifying both constraints.
 
 <h5 class="subsubsection">6.43.2.4 Input Operands</h5>
 
-<p><a name="index-g_t_0040code_007basm_007d-input-operands-3426"></a><a name="index-g_t_0040code_007basm_007d-expressions-3427"></a>
+<p><a name="index-g_t_0040code_007basm_007d-input-operands-3427"></a><a name="index-g_t_0040code_007basm_007d-expressions-3428"></a>
 Input operands make values from C variables and expressions available to the
 assembly code.
 
@@ -624,7 +624,7 @@ the generated assembler code.
 
 <h5 class="subsubsection">6.43.2.5 Clobbers</h5>
 
-<p><a name="index-g_t_0040code_007basm_007d-clobbers-3428"></a>
+<p><a name="index-g_t_0040code_007basm_007d-clobbers-3429"></a>
 While the compiler is aware of changes to entries listed in the output
 operands, the inline <code>asm</code> code may modify more than just the outputs. For
 example, calculations may require additional registers, or the processor may
@@ -693,7 +693,7 @@ ten bytes of a string, use a memory input like:
 
 <h5 class="subsubsection">6.43.2.6 Goto Labels</h5>
 
-<p><a name="index-g_t_0040code_007basm_007d-goto-labels-3429"></a>
+<p><a name="index-g_t_0040code_007basm_007d-goto-labels-3430"></a>
 <code>asm goto</code> allows assembly code to jump to one or more C labels.  The
 <var>GotoLabels</var> section in an <code>asm goto</code> statement contains
 a comma-separated

@@ -54,7 +54,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="C-Extensions.html#C-Extensions">C Exten
 
 <h3 class="section">6.7 Conditionals with Omitted Operands</h3>
 
-<p><a name="index-conditional-expressions_002c-extensions-2896"></a><a name="index-omitted-middle_002doperands-2897"></a><a name="index-middle_002doperands_002c-omitted-2898"></a><a name="index-extensions_002c-_0040code_007b_003f_003a_007d-2899"></a><a name="index-g_t_0040code_007b_003f_003a_007d-extensions-2900"></a>
+<p><a name="index-conditional-expressions_002c-extensions-2897"></a><a name="index-omitted-middle_002doperands-2898"></a><a name="index-middle_002doperands_002c-omitted-2899"></a><a name="index-extensions_002c-_0040code_007b_003f_003a_007d-2900"></a><a name="index-g_t_0040code_007b_003f_003a_007d-extensions-2901"></a>
 The middle operand in a conditional expression may be omitted.  Then
 if the first operand is nonzero, its value is the value of the conditional
 expression.
@@ -70,7 +70,7 @@ expression.
 
 <pre class="smallexample">     x ? x : y
 </pre>
- <p><a name="index-side-effect-in-_0040code_007b_003f_003a_007d-2901"></a><a name="index-g_t_0040code_007b_003f_003a_007d-side-effect-2902"></a>In this simple case, the ability to omit the middle operand is not
+ <p><a name="index-side-effect-in-_0040code_007b_003f_003a_007d-2902"></a><a name="index-g_t_0040code_007b_003f_003a_007d-side-effect-2903"></a>In this simple case, the ability to omit the middle operand is not
 especially useful.  When it becomes useful is when the first operand does,
 or may (if it is a macro argument), contain a side effect.  Then repeating
 the operand in the middle would perform the side effect twice.  Omitting

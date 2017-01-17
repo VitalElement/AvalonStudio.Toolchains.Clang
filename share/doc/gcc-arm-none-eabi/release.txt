@@ -1,7 +1,7 @@
 Release notes for
 *************************************************
 GNU Tools for ARM Embedded Processors 5
-                               - Q2 2016
+                               - Q3 2016
 *************************************************
 
 This release includes the following items:
@@ -10,20 +10,20 @@ This release includes the following items:
 * Bare metal EABI pre-built binaries for running on a Mac OS X host
 * Source code package (together with build scripts and instructions to setup
   build environment), composed of:
-  * gcc : ARM/embedded-5-branch revision 237715
+  * gcc : ARM/embedded-5-branch revision 240432
     http://gcc.gnu.org/svn/gcc/branches/ARM/embedded-5-branch/
 
-  * binutils : 2.26 prerelease with mainline backports
-    git://sourceware.org/git/binutils-gdb.git commit 81dc17df1b58c2b02d5b5e8a9556ae2a266460f5
+  * binutils : 2.26 with mainline backports
+    git://sourceware.org/git/binutils-gdb.git commit 9dd9f850edab6ea48293ef6b1000ce178e9016f0
 
-  * newlib and newlib-nano : current master with mainline backports
-    git://sourceware.org/git/newlib-cygwin.git commit 94e3a561d053ca1b00f16d81d4ade2884ea45b54
+  * newlib and newlib-nano :
+    git://sourceware.org/git/newlib-cygwin.git commit f763e2dc88d04430dd2524a529eef91a2e517e4e
 
   * gdb : 7.10 without target sim support
-    git://sourceware.org/git/binutils-gdb.git commit 1be8e6826ad559886172ba4e086fc0f280aa3741
+    git://sourceware.org/git/binutils-gdb.git commit 23c16316b1309b20016a74c50025c9d62c237de8
 
-  * cloog 0.18.0 :
-    ftp://gcc.gnu.org/pub/gcc/infrastructure/cloog-0.18.0.tar.gz
+  * cloog 0.18.1 :
+    ftp://gcc.gnu.org/pub/gcc/infrastructure/cloog-0.18.1.tar.gz
 
   * expat 2.0.1 :
     http://jaist.dl.sourceforge.net/project/expat/expat/2.0.1/expat-2.0.1.tar.gz
@@ -61,15 +61,16 @@ Features:
   + Cortex-M7 performance tuning
   + optimization of manual little endian and big endian loads
   + improved jump threading removing the need for -ftree-switch-shortcut
-* ARMv8-M Baseline and Mainline alpha support:
-  + atomics not included for ARMv8-M Baseline
+* ARMv8-M Baseline and Mainline beta support:
   + ARMv8-M Security Extensions Alpha support
+* ARM PureCode support
 * Thumb-1 library optimizations
   + https://gcc.gnu.org/ml/gcc-patches/2015-10/msg01282.html
 * CRC optimization
   + https://gcc.gnu.org/ml/gcc-patches/2015-11/msg02046.html
 * Smaller terminate handler for newlib-nano
 * Re-tied the MALLOC_LOCK and MALLOC_UNLOCK to newlib's multithread configuration for newlib-nano.
+* Thumb-2 long branch veneers
 
 Tests:
 * Tested on a variety of Cortex-M0/M0+/M3/M4/M7/A9 boards
@@ -91,9 +92,12 @@ Important bugs fixed in 5 update 2 release:
 * Fix alignment of .data in ldscripts in samples
 * Fix semihosting for ARMv7-A and ARMv7-R
 
+Important bugs fixed in 5 update 2 release:
+* Removed MSP_S and PSP_S MRS/MSR special registers
+* Fixed Thumb version detection in veneer generation
+* Fixed documentation about newlib-nano in release.txt
+
 Known Changes and Issues:
 * Thumb1 code size regression due to new register allocation:
   https://gcc.gnu.org/bugzilla/show_bug.cgi?id=61578
   https://gcc.gnu.org/bugzilla/show_bug.cgi?id=59535
-A workaround is to disable it by option -mno-lra.
-* The use of 64-bit atomic operations for ARMv8-M Mainline is not supported.

@@ -57,7 +57,7 @@ meant to be used directly from the command line.
 
      <ul>
 <li>-fwpa
-<a name="index-fwpa-5107"></a>This option runs the serial part of the link-time optimizer
+<a name="index-fwpa-5108"></a>This option runs the serial part of the link-time optimizer
 performing the inter-procedural propagation (WPA mode).  The
 compiler reads in summary information from all inputs and
 performs an analysis based on summary information only.  It
@@ -67,18 +67,18 @@ summary information from the WPA mode and the actual function
 bodies.  It then drives the LTRANS phase.
 
      <li>-fltrans
-<a name="index-fltrans-5108"></a>This option runs the link-time optimizer in the
+<a name="index-fltrans-5109"></a>This option runs the link-time optimizer in the
 local-transformation (LTRANS) mode, which reads in output from a
 previous run of the LTO in WPA mode.  In the LTRANS mode, LTO
 optimizes an object and produces the final assembly.
 
      <li>-fltrans-output-list=<var>file</var>
-<a name="index-fltrans_002doutput_002dlist-5109"></a>This option specifies a file to which the names of LTRANS output
+<a name="index-fltrans_002doutput_002dlist-5110"></a>This option specifies a file to which the names of LTRANS output
 files are written.  This option is only meaningful in conjunction
 with <samp><span class="option">-fwpa</span></samp>.
 
      <li>-fresolution=<var>file</var>
-<a name="index-fresolution-5110"></a>This option specifies the linker resolution file.  This option is
+<a name="index-fresolution-5111"></a>This option specifies the linker resolution file.  This option is
 only meaningful in conjunction with <samp><span class="option">-fwpa</span></samp> and as option
 to pass through to the LTO linker plugin. 
 </ul>

@@ -32,14 +32,20 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdlib.html#Stdlib">Stdlib</a>
 <hr>
 </div>
 
-<h3 class="section">2.41 <code>strtoull</code>&mdash;string to unsigned long long</h3>
+<h3 class="section">2.41 <code>strtoull</code>, <code>strtoull_l</code>&mdash;string to unsigned long long</h3>
 
-<p><a name="index-strtoull-92"></a><a name="index-g_t_005fstrtoull_005fr-93"></a><strong>Synopsis</strong>
+<p><a name="index-strtoull-99"></a><a name="index-strtoull_005fl-100"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdlib.h&gt;
-     unsigned long long strtoull(const char *restrict <var>s</var>, char **restrict <var>ptr</var>,
-         int <var>base</var>);
+     unsigned long long strtoull(const char *restrict <var>s</var>,
+         char **restrict <var>ptr</var>, int <var>base</var>);
      
-     unsigned long long _strtoull_r(void *<var>reent</var>, const char *restrict <var>s</var>,
+     #include &lt;stdlib.h&gt;
+     unsigned long long strtoull_l(const char *restrict <var>s</var>,
+         char **restrict <var>ptr</var>, int <var>base</var>,
+         locale_t <var>locale</var>);
+     
+     unsigned long long _strtoull_r(void *<var>reent</var>,
+         const char *restrict <var>s</var>,
          char **restrict <var>ptr</var>, int <var>base</var>);
      
 </pre>
@@ -83,6 +89,10 @@ with a substring in acceptable form), no conversion
 is performed and the value of <var>s</var> is stored in <var>ptr</var> (if <var>ptr</var> is
 not <code>NULL</code>).
 
+   <p><code>strtoull_l</code> is like <code>strtoull</code> but performs the conversion based on the
+locale specified by the locale object locale.  If <var>locale</var> is
+LC_GLOBAL_LOCALE or not a valid locale object, the behaviour is undefined.
+
    <p>The alternate function <code>_strtoull_r</code> is a reentrant version.  The
 extra argument <var>reent</var> is a pointer to a reentrancy structure.
 
@@ -90,17 +100,18 @@ extra argument <var>reent</var> is a pointer to a reentrancy structure.
 
 </pre>
 <strong>Returns</strong><br>
-<code>strtoull</code> returns the converted value, if any. If no conversion was
-made, <code>0</code> is returned.
+<code>strtoull</code>, <code>strtoull_l</code> return the converted value, if any. If no
+conversion was made, <code>0</code> is returned.
 
-   <p><code>strtoull</code> returns <code>ULONG_LONG_MAX</code> if the magnitude of the converted
-value is too large, and sets <code>errno</code> to <code>ERANGE</code>.
+   <p><code>strtoull</code>, <code>strtoull_l</code> return <code>ULONG_LONG_MAX</code> if the magnitude
+of the converted value is too large, and sets <code>errno</code> to <code>ERANGE</code>.
 
    <pre class="sp">
 
 </pre>
 <strong>Portability</strong><br>
-<code>strtoull</code> is ANSI.
+<code>strtoull</code> is ANSI. 
+<code>strtoull_l</code> is a GNU extension.
 
    <p><code>strtoull</code> requires no supporting OS subroutines.
 

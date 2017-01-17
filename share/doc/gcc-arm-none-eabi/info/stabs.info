@@ -1,5 +1,5 @@
 This is stabs.info, produced by makeinfo version 4.11 from
-/home/build/work/GCC-5-0-build/src/gdb/gdb/doc/stabs.texinfo.
+/home/build/work/GCC-5-build/src/gdb/gdb/doc/stabs.texinfo.
 
 INFO-DIR-SECTION Software development
 START-INFO-DIR-ENTRY
@@ -4492,98 +4492,98 @@ Symbol Types Index
 
 
 Tag Table:
-Node: Top1412
-Node: Overview2459
-Node: Flow3874
-Node: Stabs Format5400
-Node: String Field6962
-Node: C Example12393
-Node: Assembly Code12938
-Node: Program Structure14909
-Node: Main Program15635
-Node: Source Files16196
-Node: Include Files18648
-Node: Line Numbers21313
-Node: Procedures22847
-Node: Nested Procedures28737
-Node: Block Structure29913
-Node: Alternate Entry Points31319
-Node: Constants32052
-Node: Variables35164
-Node: Stack Variables35852
-Node: Global Variables37553
-Node: Register Variables38709
-Node: Common Blocks39531
-Node: Statics40785
-Node: Based Variables43364
-Node: Parameters44749
-Node: Register Parameters46361
-Node: Local Variable Parameters48622
-Node: Reference Parameters51537
-Node: Conformant Arrays52157
-Node: Types52874
-Node: Builtin Types53821
-Node: Traditional Builtin Types54967
-Node: Traditional Integer Types55368
-Node: Traditional Other Types57676
-Node: Builtin Type Descriptors58590
-Node: Negative Type Numbers62090
-Node: Miscellaneous Types68445
-Node: Cross-References70331
-Node: Subranges72006
-Node: Arrays73245
-Node: Strings76470
-Node: Enumerations77532
-Node: Structures79917
-Node: Typedefs82624
-Node: Unions83948
-Node: Function Types85529
-Node: Macro define and undefine87111
-Node: Symbol Tables88688
-Node: Symbol Table Format89140
-Node: Transformations On Symbol Tables90588
-Node: Transformations On Static Variables91942
-Node: Transformations On Global Variables92678
-Node: Stab Section Transformations93921
-Node: Cplusplus95304
-Node: Class Names95887
-Node: Nested Symbols96632
-Node: Basic Cplusplus Types97478
-Node: Simple Classes99038
-Node: Class Instance103332
-Node: Methods104049
-Node: Method Type Descriptor106268
-Node: Member Type Descriptor107468
-Node: Protections108260
-Node: Method Modifiers111350
-Node: Virtual Methods112978
-Node: Inheritance116779
-Node: Virtual Base Classes120475
-Node: Static Members122719
-Node: Stab Types123189
-Node: Non-Stab Symbol Types123813
-Node: Stab Symbol Types125244
-Node: Symbol Descriptors129175
-Node: Type Descriptors131954
-Node: Expanded Reference135166
-Node: N_PC136584
-Node: N_NSYMS136952
-Node: N_NOMAP137193
-Node: N_M2C137499
-Node: N_BROWS137933
-Node: N_DEFD138216
-Node: N_EHDECL138673
-Node: N_MOD2138924
-Node: N_CATCH139162
-Node: N_SSYM139656
-Node: N_SCOPE139941
-Node: Gould140131
-Node: N_LENG141123
-Node: Questions141351
-Node: Stab Sections142995
-Node: Stab Section Basics143605
-Node: ELF Linker Relocation146946
-Node: GNU Free Documentation License150467
-Node: Symbol Types Index175646
+Node: Top1410
+Node: Overview2457
+Node: Flow3872
+Node: Stabs Format5398
+Node: String Field6960
+Node: C Example12391
+Node: Assembly Code12936
+Node: Program Structure14907
+Node: Main Program15633
+Node: Source Files16194
+Node: Include Files18646
+Node: Line Numbers21311
+Node: Procedures22845
+Node: Nested Procedures28735
+Node: Block Structure29911
+Node: Alternate Entry Points31317
+Node: Constants32050
+Node: Variables35162
+Node: Stack Variables35850
+Node: Global Variables37551
+Node: Register Variables38707
+Node: Common Blocks39529
+Node: Statics40783
+Node: Based Variables43362
+Node: Parameters44747
+Node: Register Parameters46359
+Node: Local Variable Parameters48620
+Node: Reference Parameters51535
+Node: Conformant Arrays52155
+Node: Types52872
+Node: Builtin Types53819
+Node: Traditional Builtin Types54965
+Node: Traditional Integer Types55366
+Node: Traditional Other Types57674
+Node: Builtin Type Descriptors58588
+Node: Negative Type Numbers62088
+Node: Miscellaneous Types68443
+Node: Cross-References70329
+Node: Subranges72004
+Node: Arrays73243
+Node: Strings76468
+Node: Enumerations77530
+Node: Structures79915
+Node: Typedefs82622
+Node: Unions83946
+Node: Function Types85527
+Node: Macro define and undefine87109
+Node: Symbol Tables88686
+Node: Symbol Table Format89138
+Node: Transformations On Symbol Tables90586
+Node: Transformations On Static Variables91940
+Node: Transformations On Global Variables92676
+Node: Stab Section Transformations93919
+Node: Cplusplus95302
+Node: Class Names95885
+Node: Nested Symbols96630
+Node: Basic Cplusplus Types97476
+Node: Simple Classes99036
+Node: Class Instance103330
+Node: Methods104047
+Node: Method Type Descriptor106266
+Node: Member Type Descriptor107466
+Node: Protections108258
+Node: Method Modifiers111348
+Node: Virtual Methods112976
+Node: Inheritance116777
+Node: Virtual Base Classes120473
+Node: Static Members122717
+Node: Stab Types123187
+Node: Non-Stab Symbol Types123811
+Node: Stab Symbol Types125242
+Node: Symbol Descriptors129173
+Node: Type Descriptors131952
+Node: Expanded Reference135164
+Node: N_PC136582
+Node: N_NSYMS136950
+Node: N_NOMAP137191
+Node: N_M2C137497
+Node: N_BROWS137931
+Node: N_DEFD138214
+Node: N_EHDECL138671
+Node: N_MOD2138922
+Node: N_CATCH139160
+Node: N_SSYM139654
+Node: N_SCOPE139939
+Node: Gould140129
+Node: N_LENG141121
+Node: Questions141349
+Node: Stab Sections142993
+Node: Stab Section Basics143603
+Node: ELF Linker Relocation146944
+Node: GNU Free Documentation License150465
+Node: Symbol Types Index175644
 
 End Tag Table

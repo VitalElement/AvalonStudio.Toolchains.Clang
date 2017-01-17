@@ -30,11 +30,14 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Ctype.html#Ctype">Ctype</a>
 <hr>
 </div>
 
-<h3 class="section">3.33 <code>wctrans</code>&mdash;get wide-character translation type</h3>
+<h3 class="section">3.33 <code>wctrans</code>, <code>wctrans_l</code>&mdash;get wide-character translation type</h3>
 
-<p><a name="index-wctrans-150"></a><strong>Synopsis</strong>
+<p><a name="index-wctrans-198"></a><a name="index-wctrans_005fl-199"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;wctype.h&gt;
      wctrans_t wctrans(const char *<var>c</var>);
+     
+     #include &lt;wctype.h&gt;
+     wctrans_t wctrans_l(const char *<var>c</var>, locale_t <var>locale</var>);
      
 </pre>
    <p><strong>Description</strong><br>
@@ -43,11 +46,15 @@ the appropriate wctrans_t type value associated with the string,
 if one exists.  The following values are guaranteed to be recognized:
 "tolower" and "toupper".
 
+   <p><code>wctrans_l</code> is like <code>wctrans</code> but performs the function based on the
+locale specified by the locale object locale.  If <var>locale</var> is
+LC_GLOBAL_LOCALE or not a valid locale object, the behaviour is undefined.
+
    <pre class="sp">
 
 </pre>
 <strong>Returns</strong><br>
-<code>wctrans</code> returns 0 and sets <code>errno</code> to <code>EINVAL</code> if the
+<code>wctrans</code>, <code>wctrans_l</code> return 0 and sets <code>errno</code> to <code>EINVAL</code> if the
 given name is invalid.  Otherwise, it returns a valid non-zero wctrans_t
 value.
 
@@ -55,7 +62,8 @@ value.
 
 </pre>
 <strong>Portability</strong><br>
-<code>wctrans</code> is C99.
+<code>wctrans</code> is C99. 
+<code>wctrans_l</code> is POSIX-1.2008.
 
    <p>No supporting OS subroutines are required.
 

@@ -58,7 +58,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Debugging-Info.html#Debugging-Info">Deb
 <p>These are hooks for DBX format.
 
 <div class="defun">
-&mdash; Macro: <b>DBX_OUTPUT_SOURCE_LINE</b> (<var>stream, line, counter</var>)<var><a name="index-DBX_005fOUTPUT_005fSOURCE_005fLINE-4773"></a></var><br>
+&mdash; Macro: <b>DBX_OUTPUT_SOURCE_LINE</b> (<var>stream, line, counter</var>)<var><a name="index-DBX_005fOUTPUT_005fSOURCE_005fLINE-4774"></a></var><br>
 <blockquote><p>A C statement to output DBX debugging information before code for line
 number <var>line</var> of the current source file to the stdio stream
 <var>stream</var>.  <var>counter</var> is the number of time the macro was
@@ -70,7 +70,7 @@ if it can be made correct by defining <code>DBX_LINES_FUNCTION_RELATIVE</code>.
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Macro: <b>NO_DBX_FUNCTION_END</b><var><a name="index-NO_005fDBX_005fFUNCTION_005fEND-4774"></a></var><br>
+&mdash; Macro: <b>NO_DBX_FUNCTION_END</b><var><a name="index-NO_005fDBX_005fFUNCTION_005fEND-4775"></a></var><br>
 <blockquote><p>Some stabs encapsulation formats (in particular ECOFF), cannot handle the
 <code>.stabs "",N_FUN,,0,0,Lscope-function-1</code> gdb dbx extension construct. 
 On those machines, define this macro to turn this feature off without
@@ -78,7 +78,7 @@ disturbing the rest of the gdb extensions.
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Macro: <b>NO_DBX_BNSYM_ENSYM</b><var><a name="index-NO_005fDBX_005fBNSYM_005fENSYM-4775"></a></var><br>
+&mdash; Macro: <b>NO_DBX_BNSYM_ENSYM</b><var><a name="index-NO_005fDBX_005fBNSYM_005fENSYM-4776"></a></var><br>
 <blockquote><p>Some assemblers cannot handle the <code>.stabd BNSYM/ENSYM,0,0</code> gdb dbx
 extension construct.  On those machines, define this macro to turn this
 feature off without disturbing the rest of the gdb extensions. 

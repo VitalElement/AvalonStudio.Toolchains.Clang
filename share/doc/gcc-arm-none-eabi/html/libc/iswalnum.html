@@ -32,28 +32,37 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Ctype.html#Ctype">Ctype</a>
 <hr>
 </div>
 
-<h3 class="section">3.16 <code>iswalnum</code>&mdash;alphanumeric wide character test</h3>
+<h3 class="section">3.16 <code>iswalnum</code>, <code>iswalnum_l</code>&mdash;alphanumeric wide character test</h3>
 
-<p><a name="index-iswalnum-133"></a><strong>Synopsis</strong>
+<p><a name="index-iswalnum-164"></a><a name="index-iswalnum_005fl-165"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;wctype.h&gt;
      int iswalnum(wint_t <var>c</var>);
+     
+     #include &lt;wctype.h&gt;
+     int iswalnum_l(wint_t <var>c</var>, locale_t <var>locale</var>);
      
 </pre>
    <p><strong>Description</strong><br>
 <code>iswalnum</code> is a function which classifies wide-character values that
 are alphanumeric.
 
+   <p><code>iswalnum_l</code> is like <code>iswalnum</code> but performs the check based on the
+locale specified by the locale object locale.  If <var>locale</var> is
+LC_GLOBAL_LOCALE or not a valid locale object, the behaviour is undefined.
+
    <pre class="sp">
 
 </pre>
 <strong>Returns</strong><br>
-<code>iswalnum</code> returns non-zero if <var>c</var> is a alphanumeric wide character.
+<code>iswalnum</code>, <code>iswalnum_l</code> return non-zero if <var>c</var> is a alphanumeric
+wide character.
 
    <pre class="sp">
 
 </pre>
 <strong>Portability</strong><br>
-<code>iswalnum</code> is C99.
+<code>iswalnum</code> is C99. 
+<code>iswalnum_l</code> is POSIX-1.2008.
 
    <p>No supporting OS subroutines are required.
 

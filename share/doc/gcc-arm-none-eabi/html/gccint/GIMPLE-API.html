@@ -52,15 +52,15 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Match-and-Simplify.html#Match-and-Simpl
 
 <h3 class="section">25.1 GIMPLE API</h3>
 
-<p><a name="index-GIMPLE-API-5112"></a>
+<p><a name="index-GIMPLE-API-5113"></a>
 
 <div class="defun">
-&mdash; GIMPLE function: tree <b>gimple_simplify</b> (<var>enum tree_code, tree, tree, gimple_seq *, tree </var>(<var>*</var>)(<var>tree</var>))<var><a name="index-gimple_005fsimplify-5113"></a></var><br>
-&mdash; GIMPLE function: tree <b>gimple_simplify</b> (<var>enum tree_code, tree, tree, tree, gimple_seq *, tree </var>(<var>*</var>)(<var>tree</var>))<var><a name="index-gimple_005fsimplify-5114"></a></var><br>
-&mdash; GIMPLE function: tree <b>gimple_simplify</b> (<var>enum tree_code, tree, tree, tree, tree, gimple_seq *, tree </var>(<var>*</var>)(<var>tree</var>))<var><a name="index-gimple_005fsimplify-5115"></a></var><br>
-&mdash; GIMPLE function: tree <b>gimple_simplify</b> (<var>enum built_in_function, tree, tree, gimple_seq *, tree </var>(<var>*</var>)(<var>tree</var>))<var><a name="index-gimple_005fsimplify-5116"></a></var><br>
-&mdash; GIMPLE function: tree <b>gimple_simplify</b> (<var>enum built_in_function, tree, tree, tree, gimple_seq *, tree </var>(<var>*</var>)(<var>tree</var>))<var><a name="index-gimple_005fsimplify-5117"></a></var><br>
+&mdash; GIMPLE function: tree <b>gimple_simplify</b> (<var>enum tree_code, tree, tree, gimple_seq *, tree </var>(<var>*</var>)(<var>tree</var>))<var><a name="index-gimple_005fsimplify-5114"></a></var><br>
+&mdash; GIMPLE function: tree <b>gimple_simplify</b> (<var>enum tree_code, tree, tree, tree, gimple_seq *, tree </var>(<var>*</var>)(<var>tree</var>))<var><a name="index-gimple_005fsimplify-5115"></a></var><br>
+&mdash; GIMPLE function: tree <b>gimple_simplify</b> (<var>enum tree_code, tree, tree, tree, tree, gimple_seq *, tree </var>(<var>*</var>)(<var>tree</var>))<var><a name="index-gimple_005fsimplify-5116"></a></var><br>
+&mdash; GIMPLE function: tree <b>gimple_simplify</b> (<var>enum built_in_function, tree, tree, gimple_seq *, tree </var>(<var>*</var>)(<var>tree</var>))<var><a name="index-gimple_005fsimplify-5117"></a></var><br>
 &mdash; GIMPLE function: tree <b>gimple_simplify</b> (<var>enum built_in_function, tree, tree, tree, gimple_seq *, tree </var>(<var>*</var>)(<var>tree</var>))<var><a name="index-gimple_005fsimplify-5118"></a></var><br>
+&mdash; GIMPLE function: tree <b>gimple_simplify</b> (<var>enum built_in_function, tree, tree, tree, gimple_seq *, tree </var>(<var>*</var>)(<var>tree</var>))<var><a name="index-gimple_005fsimplify-5119"></a></var><br>
 <blockquote><p>The main GIMPLE API entry to the expression simplifications mimicing
 that of the GENERIC fold_{unary,binary,ternary} functions. 
 </p></blockquote></div>
@@ -75,18 +75,18 @@ tie simplifications to a SSA lattice.
 a valueization hook:
 
 <div class="defun">
-&mdash; bool: fold_stmt <b>(</b><var>gimple_stmt_iterator *, tree </var>(<var>*</var>)(<var>tree</var>))<var>;<a name="index-g_t_0028-5119"></a></var><br>
+&mdash; bool: fold_stmt <b>(</b><var>gimple_stmt_iterator *, tree </var>(<var>*</var>)(<var>tree</var>))<var>;<a name="index-g_t_0028-5120"></a></var><br>
       </div>
 
  <p>Ontop of these a <code>fold_buildN</code>-like API for GIMPLE is introduced:
 
 <div class="defun">
-&mdash; GIMPLE function: tree <b>gimple_build</b> (<var>gimple_seq *, location_t, enum tree_code, tree, tree, tree </var>(<var>*valueize</var>) (<var>tree</var>)<var> = NULL</var>)<var>;<a name="index-gimple_005fbuild-5120"></a></var><br>
-&mdash; GIMPLE function: tree <b>gimple_build</b> (<var>gimple_seq *, location_t, enum tree_code, tree, tree, tree, tree </var>(<var>*valueize</var>) (<var>tree</var>)<var> = NULL</var>)<var>;<a name="index-gimple_005fbuild-5121"></a></var><br>
-&mdash; GIMPLE function: tree <b>gimple_build</b> (<var>gimple_seq *, location_t, enum tree_code, tree, tree, tree, tree, tree </var>(<var>*valueize</var>) (<var>tree</var>)<var> = NULL</var>)<var>;<a name="index-gimple_005fbuild-5122"></a></var><br>
-&mdash; GIMPLE function: tree <b>gimple_build</b> (<var>gimple_seq *, location_t, enum built_in_function, tree, tree, tree </var>(<var>*valueize</var>) (<var>tree</var>)<var> = NULL</var>)<var>;<a name="index-gimple_005fbuild-5123"></a></var><br>
-&mdash; GIMPLE function: tree <b>gimple_build</b> (<var>gimple_seq *, location_t, enum built_in_function, tree, tree, tree, tree </var>(<var>*valueize</var>) (<var>tree</var>)<var> = NULL</var>)<var>;<a name="index-gimple_005fbuild-5124"></a></var><br>
-&mdash; GIMPLE function: tree <b>gimple_convert</b> (<var>gimple_seq *, location_t, tree, tree</var>)<var>;<a name="index-gimple_005fconvert-5125"></a></var><br>
+&mdash; GIMPLE function: tree <b>gimple_build</b> (<var>gimple_seq *, location_t, enum tree_code, tree, tree, tree </var>(<var>*valueize</var>) (<var>tree</var>)<var> = NULL</var>)<var>;<a name="index-gimple_005fbuild-5121"></a></var><br>
+&mdash; GIMPLE function: tree <b>gimple_build</b> (<var>gimple_seq *, location_t, enum tree_code, tree, tree, tree, tree </var>(<var>*valueize</var>) (<var>tree</var>)<var> = NULL</var>)<var>;<a name="index-gimple_005fbuild-5122"></a></var><br>
+&mdash; GIMPLE function: tree <b>gimple_build</b> (<var>gimple_seq *, location_t, enum tree_code, tree, tree, tree, tree, tree </var>(<var>*valueize</var>) (<var>tree</var>)<var> = NULL</var>)<var>;<a name="index-gimple_005fbuild-5123"></a></var><br>
+&mdash; GIMPLE function: tree <b>gimple_build</b> (<var>gimple_seq *, location_t, enum built_in_function, tree, tree, tree </var>(<var>*valueize</var>) (<var>tree</var>)<var> = NULL</var>)<var>;<a name="index-gimple_005fbuild-5124"></a></var><br>
+&mdash; GIMPLE function: tree <b>gimple_build</b> (<var>gimple_seq *, location_t, enum built_in_function, tree, tree, tree, tree </var>(<var>*valueize</var>) (<var>tree</var>)<var> = NULL</var>)<var>;<a name="index-gimple_005fbuild-5125"></a></var><br>
+&mdash; GIMPLE function: tree <b>gimple_convert</b> (<var>gimple_seq *, location_t, tree, tree</var>)<var>;<a name="index-gimple_005fconvert-5126"></a></var><br>
       </div>
 
  <p>which is supposed to replace <code>force_gimple_operand (fold_buildN (...), ...)</code>

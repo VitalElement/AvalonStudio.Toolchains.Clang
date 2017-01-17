@@ -52,21 +52,21 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Bugs.html#Bugs">Bugs</a>
 
 <h3 class="section">13.1 Have You Found a Bug?</h3>
 
-<p><a name="index-bug-criteria-4299"></a>
+<p><a name="index-bug-criteria-4300"></a>
 If you are not sure whether you have found a bug, here are some guidelines:
 
      
-<a name="index-fatal-signal-4300"></a>
-<a name="index-core-dump-4301"></a>
+<a name="index-fatal-signal-4301"></a>
+<a name="index-core-dump-4302"></a>
 <ul><li>If the compiler gets a fatal signal, for any input whatever, that is a
 compiler bug.  Reliable compilers never crash.
 
-     <p><a name="index-invalid-assembly-code-4302"></a><a name="index-assembly-code_002c-invalid-4303"></a><li>If the compiler produces invalid assembly code, for any input whatever
+     <p><a name="index-invalid-assembly-code-4303"></a><a name="index-assembly-code_002c-invalid-4304"></a><li>If the compiler produces invalid assembly code, for any input whatever
 (except an <code>asm</code> statement), that is a compiler bug, unless the
 compiler reports errors (not just warnings) which would ordinarily
 prevent the assembler from being run.
 
-     <p><a name="index-undefined-behavior-4304"></a><a name="index-undefined-function-value-4305"></a><a name="index-increment-operators-4306"></a><li>If the compiler produces valid assembly code that does not correctly
+     <p><a name="index-undefined-behavior-4305"></a><a name="index-undefined-function-value-4306"></a><a name="index-increment-operators-4307"></a><li>If the compiler produces valid assembly code that does not correctly
 execute the input source code, that is a compiler bug.
 
      <p>However, you must double-check to make sure, because you may have a
@@ -91,7 +91,7 @@ well defined, you have found a compiler bug.
      <li>If the compiler produces an error message for valid input, that is a
 compiler bug.
 
-     <p><a name="index-invalid-input-4307"></a><li>If the compiler does not produce an error message for invalid input,
+     <p><a name="index-invalid-input-4308"></a><li>If the compiler does not produce an error message for invalid input,
 that is a compiler bug.  However, you should note that your idea of
 &ldquo;invalid input&rdquo; might be someone else's idea of &ldquo;an extension&rdquo; or
 &ldquo;support for traditional practice&rdquo;.
